@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="github/ResonadaScreenshots/logo.png" width="140" alt="Resonāda logo">
+<img src="ResonadaScreenshots/logo.jpg" width="140" alt="Resonāda logo">
 
 # Resonāda
 
@@ -178,15 +178,15 @@ The APK is **signed**; updates with the same signature install over the top **wi
 
 |          Now Playing (bitXact)          |            Personalized Home            |             Signal Path             |
 | :-------------------------------------: | :-------------------------------------: | :---------------------------------: |
-|  <img src="../ResonadaScreenshots/NowPlaying.jpg" width="220">  |  <img src="../ResonadaScreenshots/Home.jpg" width="220">  |  <img src="../ResonadaScreenshots/SignalPath.jpg" width="220">  |
+|  <img src="ResonadaScreenshots/NowPlaying.jpg" width="220">  |  <img src="ResonadaScreenshots/Home.jpg" width="220">  |  <img src="ResonadaScreenshots/SignalPath.jpg" width="220">  |
 |             **Audio X-Ray**             |          **Fidelity Analysis**          |           **Spectrogram**           |
-|  <img src="../ResonadaScreenshots/xray.jpg" width="220">  |  <img src="../ResonadaScreenshots/FidelityAnalyzer.jpg" width="220">  |  <img src="../ResonadaScreenshots/Spectrogram.jpg" width="220">  |
+|  <img src="ResonadaScreenshots/xray.jpg" width="220">  |  <img src="ResonadaScreenshots/FidelityAnalyzer.jpg" width="220">  |  <img src="ResonadaScreenshots/Spectrogram.jpg" width="220">  |
 |        **Parametric EQ / DSP**          |          **USB DAC details**            |     **Synced lyrics + translate**   |
-|  <img src="../ResonadaScreenshots/DSP0.jpg" width="220">  |  <img src="../ResonadaScreenshots/USBDACDetails.jpg" width="220">  |  <img src="../ResonadaScreenshots/LyricsTranslation.jpg" width="220">  |
+|  <img src="ResonadaScreenshots/DSP0.jpg" width="220">  |  <img src="ResonadaScreenshots/USBDACDetails.jpg" width="220">  |  <img src="ResonadaScreenshots/LyricsTranslation.jpg" width="220">  |
 |          **Per-track tools**            |           **Music library**             |            **Navigation**           |
-|  <img src="../ResonadaScreenshots/Tools.jpg" width="220">  |  <img src="../ResonadaScreenshots/LibraryManage.jpg" width="220">  |  <img src="../ResonadaScreenshots/Sidebar.jpg" width="220">  |
+|  <img src="ResonadaScreenshots/Tools.jpg" width="220">  |  <img src="ResonadaScreenshots/LibraryManage.jpg" width="220">  |  <img src="ResonadaScreenshots/Sidebar.jpg" width="220">  |
 
-<sub>More DSP, settings and analysis screens in the <a href="../ResonadaScreenshots/">screenshots</a> folder.</sub>
+<sub>More DSP, settings and analysis screens in the <a href="ResonadaScreenshots/">screenshots</a> folder.</sub>
 
 </div>
 
