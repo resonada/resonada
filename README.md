@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src=".github/.github/ResonadaScreenshots/logo.png" width="140" alt="Resonāda logo">
+<img src=".github/ResonadaScreenshots/logo.png" width="140" alt="Resonāda logo">
 
 # Resonāda
 
