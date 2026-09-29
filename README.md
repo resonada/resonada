@@ -7,7 +7,7 @@
 ### A bit-perfect, high-fidelity music player for Android — built for people who *hear* the difference.
 
 [![Latest release](https://img.shields.io/github/v/release/resonada/resonada?style=for-the-badge&label=Download&color=E0B567)](https://github.com/resonada/resonada/releases/latest)
-`[![Downloads](https://img.shields.io/github/downloads/resonada/resonada/total?style=for-the-badge&color=9C27B0)](https://github.com/resonada/resonada/releases)
+[![Downloads](https://img.shields.io/github/downloads/resonada/resonada/total?style=for-the-badge&color=9C27B0)](https://github.com/resonada/resonada/releases)
 [![Platform](https://img.shields.io/badge/Platform-Android%208.1%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white)](#-install)
 [![Telegram](https://img.shields.io/badge/Telegram-Join%20the%20group-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/+urRX_WELImQ0MjU1)
 [![License](https://img.shields.io/badge/License-Freeware-blue?style=for-the-badge)](#-license)
