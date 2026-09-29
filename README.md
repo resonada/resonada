@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src=".github/ResonadaScreenshots/logo.png" width="140" alt="Resonāda logo">
+<img src="ResonadaScreenshots/logo.jpg" width="140" alt="Resonāda logo">
 
 # Resonāda
 
@@ -67,6 +67,7 @@ Resonāda answers those questions, on-device, for every track.
 - **A/B compare** two settings instantly, a **colourful response curve** and a live **real-time analyser (RTA)**.
 
 ### 🔬 Analysis & insight *(the part no one else has)*
+- **Acoustic Integrity Inspector & Spectrum Contour** — real-time interactive spectrum contour analysis with laboratory-grade amplitude ticks, absolute dBFS AES17 grid, peak-hold frequency milestones, and format provenance cards validating authentic 1-bit DSD depth, harmonic frequency boundaries, and upscale verification.
 - **Signal Path (Audio path)** — a live, stage-by-stage view of what happens between the file and your ears: source → decoder → sample-rate converter → DSP chain → output, each annotated with the real format and state, plus a **Signal Integrity** score and the exact reason a track *isn't* bit-perfect.
 - **Audio X-Ray** — real-time spectral + dynamics read-out of the actual PCM feeding your output: band energy, stereo width, dynamic range, compression, peak / true-peak / RMS, bandwidth and phase correlation — with a plain-language "why does this track sound bad?" diagnosis. Fully local; nothing is uploaded.
 - **Fidelity analysis & scoring** — reference-grade, whole-track metering: **DR** dynamic range, **True Peak (dBTP)** with inter-sample overs, **LUFS + LRA** to EBU R128 / ITU-R BS.1770-4, clipping detection, **effective bit depth**, and **fake-FLAC / lossy-upscale detection** with a confidence level (Confirmed / Likely / Possible). Graded Poor → Reference.
@@ -178,15 +179,15 @@ The APK is **signed**; updates with the same signature install over the top **wi
 
 |          Now Playing (bitXact)          |            Personalized Home            |             Signal Path             |
 | :-------------------------------------: | :-------------------------------------: | :---------------------------------: |
-|  <img src=".github/ResonadaScreenshots/NowPlaying.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/Home.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/SignalPath.jpg" width="220">  |
+|  <img src="ResonadaScreenshots/NowPlaying.jpg" width="220">  |  <img src="ResonadaScreenshots/Home.jpg" width="220">  |  <img src="ResonadaScreenshots/SignalPath.jpg" width="220">  |
 |             **Audio X-Ray**             |          **Fidelity Analysis**          |           **Spectrogram**           |
-|  <img src=".github/ResonadaScreenshots/xray.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/FidelityAnalyzer.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/Spectrogram.jpg" width="220">  |
+|  <img src="ResonadaScreenshots/xray.jpg" width="220">  |  <img src="ResonadaScreenshots/FidelityAnalyzer.jpg" width="220">  |  <img src="ResonadaScreenshots/Spectrogram.jpg" width="220">  |
 |        **Parametric EQ / DSP**          |          **USB DAC details**            |     **Synced lyrics + translate**   |
-|  <img src=".github/ResonadaScreenshots/DSP0.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/USBDACDetails.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/LyricsTranslation.jpg" width="220">  |
+|  <img src="ResonadaScreenshots/DSP0.jpg" width="220">  |  <img src="ResonadaScreenshots/USBDACDetails.jpg" width="220">  |  <img src="ResonadaScreenshots/LyricsTranslation.jpg" width="220">  |
 |          **Per-track tools**            |           **Music library**             |            **Navigation**           |
-|  <img src=".github/ResonadaScreenshots/Tools.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/LibraryManage.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/Sidebar.jpg" width="220">  |
+|  <img src="ResonadaScreenshots/Tools.jpg" width="220">  |  <img src="ResonadaScreenshots/LibraryManage.jpg" width="220">  |  <img src="ResonadaScreenshots/Sidebar.jpg" width="220">  |
 
-<sub>More DSP, settings and analysis screens in the <a href=".github/ResonadaScreenshots/">screenshots</a> folder.</sub>
+<sub>More DSP, settings and analysis screens in the <a href="ResonadaScreenshots/">screenshots</a> folder.</sub>
 
 </div>
 
@@ -195,7 +196,7 @@ The APK is **signed**; updates with the same signature install over the top **wi
 ## 🗒️ Releases
 
 All builds are published on the **[Releases](https://github.com/resonada/resonada/releases)** page,
-with notes describing what changed. The current line is **`Resonāda — 2.0.7.8 · Pratibimba · reflection`**.
+with notes describing what changed. The current line is **`Resonāda — 2.0.7.9 · Pramāṇa · authenticity`**.
 
 
 ---
