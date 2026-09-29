@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="ResonadaScreenshots/logo.jpg" width="140" alt="Resonāda logo">
+<img src=".github/ResonadaScreenshots/logo.png" width="140" alt="Resonāda logo">
 
 # Resonāda
 
@@ -179,15 +179,15 @@ The APK is **signed**; updates with the same signature install over the top **wi
 
 |          Now Playing (bitXact)          |            Personalized Home            |             Signal Path             |
 | :-------------------------------------: | :-------------------------------------: | :---------------------------------: |
-|  <img src="ResonadaScreenshots/NowPlaying.jpg" width="220">  |  <img src="ResonadaScreenshots/Home.jpg" width="220">  |  <img src="ResonadaScreenshots/SignalPath.jpg" width="220">  |
+|  <img src=".github/ResonadaScreenshots/NowPlaying.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/Home.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/SignalPath.jpg" width="220">  |
 |             **Audio X-Ray**             |          **Fidelity Analysis**          |           **Spectrogram**           |
-|  <img src="ResonadaScreenshots/xray.jpg" width="220">  |  <img src="ResonadaScreenshots/FidelityAnalyzer.jpg" width="220">  |  <img src="ResonadaScreenshots/Spectrogram.jpg" width="220">  |
+|  <img src=".github/ResonadaScreenshots/xray.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/FidelityAnalyzer.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/Spectrogram.jpg" width="220">  |
 |        **Parametric EQ / DSP**          |          **USB DAC details**            |     **Synced lyrics + translate**   |
-|  <img src="ResonadaScreenshots/DSP0.jpg" width="220">  |  <img src="ResonadaScreenshots/USBDACDetails.jpg" width="220">  |  <img src="ResonadaScreenshots/LyricsTranslation.jpg" width="220">  |
+|  <img src=".github/ResonadaScreenshots/DSP0.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/USBDACDetails.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/LyricsTranslation.jpg" width="220">  |
 |          **Per-track tools**            |           **Music library**             |            **Navigation**           |
-|  <img src="ResonadaScreenshots/Tools.jpg" width="220">  |  <img src="ResonadaScreenshots/LibraryManage.jpg" width="220">  |  <img src="ResonadaScreenshots/Sidebar.jpg" width="220">  |
+|  <img src=".github/ResonadaScreenshots/Tools.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/LibraryManage.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/Sidebar.jpg" width="220">  |
 
-<sub>More DSP, settings and analysis screens in the <a href="ResonadaScreenshots/">screenshots</a> folder.</sub>
+<sub>More DSP, settings and analysis screens in the <a href=".github/ResonadaScreenshots/">screenshots</a> folder.</sub>
 
 </div>
 
@@ -261,3 +261,4 @@ Made with care by **R Kaurav**.
 <sub>Keywords: audiophile android music player · bit-perfect · USB DAC · UAC · hi-res audio · FLAC · ALAC · APE · Monkey's Audio · WavPack · DSD · SACD ISO · lossless · exclusive output · smartlists · output devices · Flow · parametric EQ · convolution · DSP · fidelity analysis · spectrogram · synced lyrics · Subsonic · Navidrome · DLNA · UPnP · WebDAV · Last.fm · ListenBrainz</sub>
 
 </div>
+
