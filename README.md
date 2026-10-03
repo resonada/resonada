@@ -1,13 +1,13 @@
 <div align="center">
 
-<img src=".github/ResonadaScreenshots/logo.png" width="140" alt="Resonāda logo">
+<img src="ResonadaScreenshots/logo.jpg" width="140" alt="Resonāda logo">
 
 # Resonāda
 
 ### A bit-perfect, high-fidelity music player for Android — built for people who *hear* the difference.
 
 [![Latest release](https://img.shields.io/github/v/release/resonada/resonada?style=for-the-badge&label=Download&color=E0B567)](https://github.com/resonada/resonada/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/resonada/resonada/total?style=for-the-badge&color=9C27B0)](https://github.com/resonada/resonada/releases)
+`[![Downloads](https://img.shields.io/github/downloads/resonada/resonada/total?style=for-the-badge&color=9C27B0)](https://github.com/resonada/resonada/releases)
 [![Platform](https://img.shields.io/badge/Platform-Android%208.1%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white)](#-install)
 [![Telegram](https://img.shields.io/badge/Telegram-Join%20the%20group-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/+urRX_WELImQ0MjU1)
 [![License](https://img.shields.io/badge/License-Freeware-blue?style=for-the-badge)](#-license)
@@ -73,6 +73,7 @@ Resonāda answers those questions, on-device, for every track.
 - **Fidelity analysis & scoring** — reference-grade, whole-track metering: **DR** dynamic range, **True Peak (dBTP)** with inter-sample overs, **LUFS + LRA** to EBU R128 / ITU-R BS.1770-4, clipping detection, **effective bit depth**, and **fake-FLAC / lossy-upscale detection** with a confidence level (Confirmed / Likely / Possible). Graded Poor → Reference.
 - **Calibrated spectrogram** — per-channel FFT to the true Nyquist, a full-scale tone reads exactly 0 dB, with the fidelity verdict and detected frequency cutoff drawn right on the image, tap-any-point read-out, a dB colour scale, and one-tap **image export** with the methodology. **Pinch-zoom genuinely re-analyses** the region at a growing FFT size (2048 → 8192), and channel views (Stereo / L / R / Mid / **Side**) expose joint-stereo artifacts and fake-stereo upmixes.
 - **BPM & musical-key detection** for any track, including DSD — with a one-tap batch pass that analyses every track still missing them.
+- **Semantic seek bar** — a specialized seekbar that visualizes chorus and sections, allowing you to jump between them or to synced-lyric phrases, with drag-snapping to bar downbeats.
 - **R128 loudness scanning** — measure true EBU R128 loudness from album and artist menus and fill in ReplayGain 2.0 track + album gain for untagged files, so volume levelling works on any library with no desktop tagging.
 
 ### ⬆️ Experimental upsampling *(opt-in)*
@@ -179,15 +180,15 @@ The APK is **signed**; updates with the same signature install over the top **wi
 
 |          Now Playing (bitXact)          |            Personalized Home            |             Signal Path             |
 | :-------------------------------------: | :-------------------------------------: | :---------------------------------: |
-|  <img src=".github/ResonadaScreenshots/NowPlaying.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/Home.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/SignalPath.jpg" width="220">  |
+|  <img src="ResonadaScreenshots/NowPlaying.jpg" width="220">  |  <img src="ResonadaScreenshots/Home.jpg" width="220">  |  <img src="ResonadaScreenshots/SignalPath.jpg" width="220">  |
 |             **Audio X-Ray**             |          **Fidelity Analysis**          |           **Spectrogram**           |
-|  <img src=".github/ResonadaScreenshots/xray.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/FidelityAnalyzer.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/Spectrogram.jpg" width="220">  |
+|  <img src="ResonadaScreenshots/xray.jpg" width="220">  |  <img src="ResonadaScreenshots/FidelityAnalyzer.jpg" width="220">  |  <img src="ResonadaScreenshots/Spectrogram.jpg" width="220">  |
 |        **Parametric EQ / DSP**          |          **USB DAC details**            |     **Synced lyrics + translate**   |
-|  <img src=".github/ResonadaScreenshots/DSP0.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/USBDACDetails.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/LyricsTranslation.jpg" width="220">  |
+|  <img src="ResonadaScreenshots/DSP0.jpg" width="220">  |  <img src="ResonadaScreenshots/USBDACDetails.jpg" width="220">  |  <img src="ResonadaScreenshots/LyricsTranslation.jpg" width="220">  |
 |          **Per-track tools**            |           **Music library**             |            **Navigation**           |
-|  <img src=".github/ResonadaScreenshots/Tools.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/LibraryManage.jpg" width="220">  |  <img src=".github/ResonadaScreenshots/Sidebar.jpg" width="220">  |
+|  <img src="ResonadaScreenshots/Tools.jpg" width="220">  |  <img src="ResonadaScreenshots/LibraryManage.jpg" width="220">  |  <img src="ResonadaScreenshots/Sidebar.jpg" width="220">  |
 
-<sub>More DSP, settings and analysis screens in the <a href=".github/ResonadaScreenshots/">screenshots</a> folder.</sub>
+<sub>More DSP, settings and analysis screens in the <a href="ResonadaScreenshots/">screenshots</a> folder.</sub>
 
 </div>
 
@@ -196,7 +197,7 @@ The APK is **signed**; updates with the same signature install over the top **wi
 ## 🗒️ Releases
 
 All builds are published on the **[Releases](https://github.com/resonada/resonada/releases)** page,
-with notes describing what changed. The current line is **`Resonāda — 2.0.7.9 · Pramāṇa · authenticity`**.
+with notes describing what changed. The current line is **`Resonāda — 2.0.8.0 · Udgama · emergence`**.
 
 
 ---
@@ -261,4 +262,3 @@ Made with care by **R Kaurav**.
 <sub>Keywords: audiophile android music player · bit-perfect · USB DAC · UAC · hi-res audio · FLAC · ALAC · APE · Monkey's Audio · WavPack · DSD · SACD ISO · lossless · exclusive output · smartlists · output devices · Flow · parametric EQ · convolution · DSP · fidelity analysis · spectrogram · synced lyrics · Subsonic · Navidrome · DLNA · UPnP · WebDAV · Last.fm · ListenBrainz</sub>
 
 </div>
-
