@@ -46,6 +46,7 @@ Resonāda answers those questions, on-device, for every track.
 - **Multichannel done right** — 5.1-and-beyond FLAC/WAV/AIFF/ALAC plays bit-perfect through a multichannel-capable USB DAC, with volume and ReplayGain applied evenly to every channel.
 - **A badge that tells the truth.** The **bitXact** indicator reflects the *entire* signal path — it only lights up gold when the audio is genuinely bit-exact, and stays dim the moment DSP, software volume or a sample-rate conversion touches the stream.
 - **Hi-res internal DACs are first-class too.** On phones and DAPs with a direct hi-res wired output (LG Quad DAC, Sony Xperia, hi-res DAPs), hi-res lossless automatically takes the native engine's exclusive source-rate path — no settings hunt — and earns its own dedicated purple **Direct BitXact** or teal **Native · exclusive** seal (never the gold bitXact glow, which stays reserved for the verifiable USB path).
+- **Native DSD & DoP on dedicated Android DAPs** — direct bitstream output and DoP playback on high-res DAPs (including iBasso FPGA IEC61937 and DX180) via direct HAL stream with hardware DSD lock and dedicated purple **Direct BitXact** badge; direct DXD 352.8 kHz decimation fallback.
 
 ### 🔌 Deep USB-DAC insight
 - Full **UAC descriptor decode** — product / manufacturer / VID / PID, UAC1 vs UAC2, interface and endpoint layout, every **supported rate, bit depth and format**, native-DSD capability, and whether the DAC exposes a usable **hardware-volume feature unit**.
@@ -58,6 +59,7 @@ Resonāda answers those questions, on-device, for every track.
 - **Dynamic DSP node reordering & profile sharing** — drag to reorder processor cards and reshape the real-time DSP pipeline with zero heap allocations, guided by an intelligent Topology Advisor. Full DSP profiles can be exported to JSON, saved, shared, or imported with schema validation.
 - **Up to 32-band parametric EQ** with true RBJ biquads and click-free coefficient ramping.
 - **Convolution** (impulse-response) for headphone & room correction, plus **crossfeed** and **compressor / limiter** dynamics.
+- **HRIR stereophonic soundstage unfolder** — high-fidelity binaural crossfeed processor with tiered room impulse response controls, decoupled feedforward bleed, atomic buffer reset, and recursive crosstalk safety limits.
 - **AutoEQ, built in** — import oratory1990 / Crinacle-style profiles, or search the headphone-correction catalogue in-app and apply with one tap; the catalogue **keeps itself current** with a weekly refresh from the upstream project.
 - **On-device PEQ optimizer** — import frequency-response measurements (Squiglink / Crinacle CSV exports) and generate a parametric EQ curve toward Harman IE, Harman OE, or a custom target — entirely on-device, no cloud needed.
 - **DSP presets** — save your current sound under a name and recall it anytime; every value readout is **tap-to-type** for exact numbers, and a one-tap **Reset** restores flat defaults.
@@ -82,18 +84,21 @@ Reconstruct lossless PCM to a higher sample rate through a reference-class linea
 ### 📚 Library & metadata
 - Fast **incremental, parallel on-device scan** that updates only what changed, across **internal storage, SD cards and multiple folders**, all merged into one library — with **all-files access** (reads tags and artwork from the files themselves, not Android’s media index) or per-folder picks, and **exclude-subfolder** rules.
 - **Media Library** (sidebar) — one place for sources, scan, and keep-screen-on while scanning, plus library policies: **split album by path**, **Title Case** names, **ignore WAV metadata**, **guess tags from file name**, and **cover art priority** (folder vs embedded). Multi-disc sets stay **one album** with Disc 1 / Disc 2 sections from disc tags.
+- **Dedicated Audiophile Search** — multi-entity matching with instant format chips (FLAC, DSD, Hi-Res, Lossy), deep criteria filtering, and smooth query persistence.
 - **CUE single-file albums** — one long FLAC/WAV/AIFF/ALAC with a `.cue` beside it appears and plays as its individual tracks, on both the standard and bit-perfect paths.
+- **Album Artists tab & custom field filtering** — dedicated Album Artists library browsing, plus user-defined custom metadata fields integrated across all track lists and quick-filter chips.
 - **Collaborative tracks & artist disambiguation** — collaborative tracks offer a dedicated disambiguation sheet to explore individual artists or shared works, complemented by an Appears On catalog section on artist detail screens.
 - **Album custom fields & customizable track cards** — albums support custom metadata fields with automatic bidirectional track synchronization, and main track cards feature optional toggles for audio quality chip, duration, musical analysis, and folder path.
 - **Smartlists** — rule-based library lists with presets (Recently Added, Most Played, Never Played, Rediscover, Hi-Res, Verified Lossless, and more), a **Rule Builder** for your own lists, **custom fields**, multi-select Smart chips, and play / shuffle / queue from the Smart tab. Fully on-device.
 - **Tag editor** that reads and writes the full hi-res tag set (composer, ISRC, label, catalog #, BPM, key, lyrics and more) — type fields by hand or use online lookup / AcoustID fingerprint match (including genre, track and disc from MusicBrainz) — with **cover-art** embed / folder-sidecar. **Album Edit tags** from the Albums list (⋮ / long-press) or Album detail: **Fetch online** (one release for the whole album) or **Edit manually** (album-level fields + cover applied to every track). **Star ratings (1–5)** embed into the file's own tags so they travel with your library.
 - **Filter chips on every tab** — Favorites, Hi-Res, DSD, FLAC, Genre, Decade, Rating and an Added 7/30/90-day window narrow Songs, Albums, Artists and Playlists instantly; Albums sort by Year / Date added, Artists by Date added.
-- **Playlists** with **.m3u import / export**, **save the current queue** to a playlist (remote streams filtered out), and **AI-assisted playlist** generation from a prompt.
+- **Playlists** with **.m3u import / export**, automatic discovery of storage playlists, atomic O(1) drag-and-drop reordering, and **save the current queue** to a playlist (remote streams filtered out), and **AI-assisted playlist** generation from a prompt.
 - A built-in **folder browser** so you can add any folder without fighting Android's system picker.
 - **Open with / Share** — Resonāda appears in Android's system chooser and share sheet for audio files, so you can open a track from Files or another app straight into the player.
 
 ### 🎤 Lyrics
 - **Synced, word-level karaoke lyrics** with a highlight that follows the beat, loaded from LRC / TTML / KRC / YRC / QRC / **Lyricsfile** (beside a track or embedded). **Type size** XS–XL and **Sans / Serif / Mono**, persisted. LrcLib instrumentals show as **Instrumental** and persist as official Lyricsfile YAML.
+- **Phonetic lyrics romanization** — multi-script romanization for CJK, Cyrillic, and Devanagari lyrics with inline toggle and crowdsourced Unison provider.
 - **Lyrics canvases** — Void, Aura, Kinetic, Prism, Monolith, Gradient, plus **Noir** (silver Ken Burns), **Bloom** (palette orbs), **Cinema** (letterbox + warm grade), and **Fluid** (cover-art wash, left-aligned white text). Cinema and Fluid continue under the status bar and visualizer.
 - **Choose your source** — preview and pick from multiple online lyric providers before applying (including zero-friction Genius and Lyrics.ovh, plus Wikipedia album metadata and artist biographies). Optional **HTTP/SOCKS5 proxy** in Settings for QQ Music / KuGou / NetEase when those hosts are blocked.
 - **Inline translation** — translate synced lyrics to your language right in the view, on-device and **offline** (free), or with your own cloud translation key for higher quality.
@@ -197,7 +202,7 @@ The APK is **signed**; updates with the same signature install over the top **wi
 ## 🗒️ Releases
 
 All builds are published on the **[Releases](https://github.com/resonada/resonada/releases)** page,
-with notes describing what changed. The current line is **`Resonāda — 2.0.8.0 · Udgama · emergence`**.
+with notes describing what changed. The current line is **`Resonāda — 2.0.9.0 · Anubhūti · experience`**.
 
 
 ---
