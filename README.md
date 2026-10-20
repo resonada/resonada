@@ -64,7 +64,7 @@ Resonāda answers those questions, on-device, for every track.
 - **On-device PEQ optimizer** — import frequency-response measurements (Squiglink / Crinacle CSV exports) and generate a parametric EQ curve toward Harman IE, Harman OE, or a custom target — entirely on-device, no cloud needed.
 - **DSP presets** — save your current sound under a name and recall it anytime; every value readout is **tap-to-type** for exact numbers, and a one-tap **Reset** restores flat defaults.
 - **DSP precision selector** — choose between standard (32-bit float) and audiophile-grade (64-bit double) precision for volume and ReplayGain control.
-- **Binaural HRTF & Stereo Virtual Loudspeakers** — fold multichannel (5.1/7.1) to stereo with configurable fold headroom (safe −6 dB to direct 0 dB) or render 2.0 stereo tracks through **±30° virtual loudspeakers** using measured Neumann KU100 HRTFs across 44.1–192+ kHz on **USB DAC, Bluetooth, and phone speaker** (with automatic **bitXact** bypass); load your own AES69 `.sofa` sets and switch them live.
+- **Binaural HRTF & Stereo Virtual Loudspeakers** — fold multichannel (5.1/7.1) to stereo with configurable fold headroom (safe −12 dB to direct 0 dB) or render 2.0 stereo tracks through **±30° virtual loudspeakers** using measured Neumann KU100 HRTFs across 44.1–192+ kHz on **USB DAC, Bluetooth, and phone speaker** (with automatic **bitXact** bypass); load your own AES69 `.sofa` sets and switch them live.
 - **ReplayGain**, and **crossfade** with selectable curves (linear / equal-power / exponential / logarithmic).
 - **A/B compare** two settings instantly, a **colourful response curve** and a live **real-time analyser (RTA)**.
 
@@ -202,7 +202,7 @@ The APK is **signed**; updates with the same signature install over the top **wi
 ## 🗒️ Releases
 
 All builds are published on the **[Releases](https://github.com/resonada/resonada/releases)** page,
-with notes describing what changed. The current line is **`Resonāda — 2.1.0.0 · Samanvaya · harmony`**.
+with notes describing what changed. The current line is **`Resonāda — 2.1.0.1 · Saṃskāra · refinement`**.
 
 
 ---
