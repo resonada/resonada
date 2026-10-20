@@ -64,7 +64,7 @@ Resonāda answers those questions, on-device, for every track.
 - **On-device PEQ optimizer** — import frequency-response measurements (Squiglink / Crinacle CSV exports) and generate a parametric EQ curve toward Harman IE, Harman OE, or a custom target — entirely on-device, no cloud needed.
 - **DSP presets** — save your current sound under a name and recall it anytime; every value readout is **tap-to-type** for exact numbers, and a one-tap **Reset** restores flat defaults.
 - **DSP precision selector** — choose between standard (32-bit float) and audiophile-grade (64-bit double) precision for volume and ReplayGain control.
-- **Binaural HRTF** — fold multichannel (5.1/7.1) to stereo through measured Neumann KU100 HRTFs on **USB DAC, Bluetooth, and phone speaker** (not USB-only); load your own AES69 `.sofa` sets and switch them live.
+- **Binaural HRTF & Stereo Virtual Loudspeakers** — fold multichannel (5.1/7.1) to stereo with configurable fold headroom (safe −6 dB to direct 0 dB) or render 2.0 stereo tracks through **±30° virtual loudspeakers** using measured Neumann KU100 HRTFs across 44.1–192+ kHz on **USB DAC, Bluetooth, and phone speaker** (with automatic **bitXact** bypass); load your own AES69 `.sofa` sets and switch them live.
 - **ReplayGain**, and **crossfade** with selectable curves (linear / equal-power / exponential / logarithmic).
 - **A/B compare** two settings instantly, a **colourful response curve** and a live **real-time analyser (RTA)**.
 
@@ -72,7 +72,7 @@ Resonāda answers those questions, on-device, for every track.
 - **Acoustic Integrity Inspector & Spectrum Contour** — real-time interactive spectrum contour analysis with laboratory-grade amplitude ticks, absolute dBFS AES17 grid, peak-hold frequency milestones, and format provenance cards validating authentic 1-bit DSD depth, harmonic frequency boundaries, and upscale verification.
 - **Signal Path (Audio path)** — a live, stage-by-stage view of what happens between the file and your ears: source → decoder → sample-rate converter → DSP chain → output, each annotated with the real format and state, plus a **Signal Integrity** score and the exact reason a track *isn't* bit-perfect.
 - **Audio X-Ray** — real-time spectral + dynamics read-out of the actual PCM feeding your output: band energy, stereo width, dynamic range, compression, peak / true-peak / RMS, bandwidth and phase correlation — with a plain-language "why does this track sound bad?" diagnosis. Fully local; nothing is uploaded.
-- **Fidelity analysis & scoring** — reference-grade, whole-track metering: **DR** dynamic range, **True Peak (dBTP)** with inter-sample overs, **LUFS + LRA** to EBU R128 / ITU-R BS.1770-4, clipping detection, **effective bit depth**, and **fake-FLAC / lossy-upscale detection** with a confidence level (Confirmed / Likely / Possible). Graded Poor → Reference.
+- **Fidelity analysis & scoring** — reference-grade, whole-track, batch-album, and **whole-library** background metering (with pause/resume, playback-safe throttling, low-battery protection, and `.fidelity.json` sidecar export): **DR** dynamic range, **True Peak (dBTP)** with inter-sample overs, **LUFS + LRA** to EBU R128 / ITU-R BS.1770-4, clipping detection, **effective bit depth**, and **fake-FLAC / lossy-upscale detection** with a confidence level (Confirmed / Likely / Possible). Graded Poor → Reference.
 - **Calibrated spectrogram** — per-channel FFT to the true Nyquist, a full-scale tone reads exactly 0 dB, with the fidelity verdict and detected frequency cutoff drawn right on the image, tap-any-point read-out, a dB colour scale, and one-tap **image export** with the methodology. **Pinch-zoom genuinely re-analyses** the region at a growing FFT size (2048 → 8192), and channel views (Stereo / L / R / Mid / **Side**) expose joint-stereo artifacts and fake-stereo upmixes.
 - **BPM & musical-key detection** for any track, including DSD — with a one-tap batch pass that analyses every track still missing them.
 - **Semantic seek bar** — a specialized seekbar that visualizes chorus and sections, allowing you to jump between them or to synced-lyric phrases, with drag-snapping to bar downbeats.
@@ -112,7 +112,7 @@ Reconstruct lossless PCM to a higher sample rate through a reference-class linea
 - **News & articles** (subscribe to any RSS/Atom feed) and **artist / album bios** — all off by default.
 
 ### ☁️ Sources & network
-- **Jellyfin streaming & music client** — connect directly to your Jellyfin server via PIN Quick Connect; browse Genres, Albums, Artists and Playlists; launch Instant Mix radio; sync server favorites, report real-time playback sessions, and fetch server lyrics.
+- **Native Music Server Client (Subsonic, OpenSubsonic, Jellyfin, Emby & Plex)** — dedicated native client experience with a Home dashboard, Albums, Artists, Playlists, Genres, Favorites/Starred and ratings sync, Instant Mix radio, hi-res format badges, synced server lyrics, offline track and album downloads to Music, and cross-server switching (including Jellyfin PIN Quick Connect).
 - Stream from **network shares (WebDAV, FTP, SFTP, SMB)**, **Dropbox**, **DLNA / UPnP** servers, **the Internet Archive**, **internet radio** and **podcasts** — radio station files (`.m3u`/`.m3u8`) can be picked from storage or are **auto-discovered** and offered as ready-to-browse sources.
 - **Subsonic / Navidrome** (and compatible servers) — browse playlists, starred, random, artists and search; heart a track in the app and it **stars on the server** so it shows up on your PC.
 - **Popular music-streaming services** connect with your own account for search, streaming and downloads — including your account **Favourites and Playlists** as browsable tabs.
@@ -146,7 +146,7 @@ Reconstruct lossless PCM to a higher sample rate through a reference-class linea
 - **Playback tempo** — pitch-preserved speed control (0.5–2.0×) from Now Playing tools on the standard player path; locked at 1× when bitXact / native exclusive USB or DSD is active so the pure path stays honest.
 - **5 selectable launcher icons** whose gradient flows into the in-app accents.
 - A premium, animated **cosmic-dance About** screen — tap to sound the Oṃ.
-- **Per-track quick tools** — Info, Metadata, Lyrics, Sleep timer, Tempo, X-Ray and Spectrogram, all one tap from Now Playing.
+- **Per-track quick tools & Volume Studio** — Info, Metadata, Lyrics, Sleep timer, Tempo, X-Ray, Spectrogram, and a dedicated **Volume Studio** sheet (adapting to USB DAC hardware UAC, software taper, system stream, or 1-bit DSD, plus Mono, Stereo L/R balance trim, and Multichannel fold headroom), all one tap from Now Playing, plus optional **180° reverse portrait rotation** for DAC/amp stacking.
 - **Seek bar styles** — Waveform (default), **Wavy**, **Squiggly**, **Trace** (file peak/RMS), Hairline, Classic, **Pill**, **Glow**, or **Notch** — Settings → Visuals; spectrum visualizer uses fixed frequency colours while ambient styles stay rainbow.
 - **Cover corner** — Sharp / Soft / Default / Round / Circle on Now Playing and album/artist heroes.
 - **Ambient backdrops** — 10 premium ambient styles for Now Playing (Obsidian Void, Adaptive Chrome, Astral Glow, Resonance Field, Ethereal Mesh, Prismatic Drift, Deep Noir, Luminous Bloom, Fluid Canvas, Cinema Wash) with a **Gradient richness** slider (Minimal / Balanced / Rich / Vivid) and optional dynamic flow.
@@ -202,7 +202,7 @@ The APK is **signed**; updates with the same signature install over the top **wi
 ## 🗒️ Releases
 
 All builds are published on the **[Releases](https://github.com/resonada/resonada/releases)** page,
-with notes describing what changed. The current line is **`Resonāda — 2.0.9.0 · Anubhūti · experience`**.
+with notes describing what changed. The current line is **`Resonāda — 2.1.0.0 · Samanvaya · harmony`**.
 
 
 ---
