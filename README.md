@@ -24,9 +24,23 @@ Experience Resonāda in real time — streaming bit-perfect audio over USB Audio
 
 <div align="center">
 
-<video src="assets/screen-20261026-214900.mp4" width="85%" controls="controls" poster="assets/Screenshot_20261026-212700.png">
-  Your browser does not support the video tag. View the raw recording directly: <a href="assets/screen-20261026-214900.mp4">Demonstration Video (MP4)</a>
+<a href="https://files.catbox.moe/2v2wzj.mp4" target="_blank" rel="noopener noreferrer">
+  <img src="assets/Screenshot_20261026-212700.png" width="320" style="border-radius: 16px; box-shadow: 0 6px 24px rgba(0,0,0,0.5);" alt="Resonāda Demonstration Video Preview">
+</a>
+
+<br><br>
+
+[![Watch Demonstration Video](https://img.shields.io/badge/▶%20Watch%20Demonstration%20Video-1080p%2060%20FPS%20(6m%2030s)-E0B567?style=for-the-badge)](https://files.catbox.moe/2v2wzj.mp4)
+
+<br>
+
+**[▶️ Watch / Stream Online (Direct MP4)](https://files.catbox.moe/2v2wzj.mp4)** &nbsp;•&nbsp; **[⬇️ Download Raw Video (82.9 MB)](https://github.com/resonada/resonada/raw/main/assets/screen-20261026-214900.mp4)**
+
+<video src="https://files.catbox.moe/2v2wzj.mp4" width="85%" controls="controls" poster="assets/Screenshot_20261026-212700.png">
+  Your browser does not support the video tag. View online: <a href="https://files.catbox.moe/2v2wzj.mp4">Demonstration Video (MP4)</a>
 </video>
+
+<br>
 
 <sub>Full 1080×2412 60 FPS walkthrough featuring live bitXact USB playback, signal flow, and analysis suite.</sub>
 
