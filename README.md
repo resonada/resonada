@@ -1,260 +1,253 @@
 <div align="center">
 
-<img src="ResonadaScreenshots/logo.jpg" width="140" alt="Resonāda logo">
+<img src="assets/logo.jpg" width="130" style="border-radius: 26px;" alt="Resonāda Logo">
 
 # Resonāda
 
-### A bit-perfect, high-fidelity music player for Android — built for people who *hear* the difference.
+### True Bit-Perfect, Reference-Grade Audio Engine & Player for Android
 
-[![Latest release](https://img.shields.io/github/v/release/resonada/resonada?style=for-the-badge&label=Download&color=E0B567)](https://github.com/resonada/resonada/releases/latest)
-`[![Downloads](https://img.shields.io/github/downloads/resonada/resonada/total?style=for-the-badge&color=9C27B0)](https://github.com/resonada/resonada/releases)
-[![Platform](https://img.shields.io/badge/Platform-Android%208.1%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white)](#-install)
-[![Telegram](https://img.shields.io/badge/Telegram-Join%20the%20group-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/+urRX_WELImQ0MjU1)
+[![Latest Release](https://img.shields.io/github/v/release/resonada/resonada?style=for-the-badge&label=Download&color=E0B567)](https://github.com/resonada/resonada/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/resonada/resonada/total?style=for-the-badge&color=9C27B0)](https://github.com/resonada/resonada/releases)
+[![Platform](https://img.shields.io/badge/Platform-Android%208.1%2B-3DDC84?style=for-the-badge&logo=android&logoColor=white)](#-installation--setup)
+[![Telegram](https://img.shields.io/badge/Telegram-Join%20Community-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/+urRX_WELImQ0MjU1)
 [![License](https://img.shields.io/badge/License-Freeware-blue?style=for-the-badge)](#-license)
 
-**[⬇️ Download the latest APK](https://github.com/resonada/resonada/releases/latest)**
-
----
-
-## ✨ What is Resonāda?
-
-**Resonāda** is a no-compromise **local + streaming** music player for Android that treats your
-audio chain with the respect it deserves. It ships its **own native audio engine** — a user-space
-USB Audio driver that streams straight to your DAC, **bit-for-bit**, bypassing Android's mixer and
-the phone's audio HAL entirely. On top of that sits a full **parametric DSP suite** and a set of
-**analysis tools** most desktop software doesn't have: a live signal-path inspector, a real-time
-audio X-ray, reference-grade fidelity metering and a calibrated spectrogram.
-
-> Drop in your lossless library, plug in your DAC, and let the bits flow untouched — then *see* exactly what reaches your ears.
-
-It's built for the listener who wants the truth about their music: is this file really hi-res, or an
-upscaled fake? Is the signal actually bit-perfect right now, or is something in the path touching it?
-Resonāda answers those questions, on-device, for every track.
-
----
-
-## 🌟 Features
-
-### 🔊 True bit-perfect playback — **bitXact**
-- **Exclusive USB-DAC output.** A hand-written **USB Audio Class (UAC) driver** streams isochronous audio directly to your DAC's endpoint via `usbdevfs`, bypassing AudioFlinger and the OEM HAL — the same "true bit-perfect" approach as the best desktop players. The DAC is **reclocked to each track's exact sample rate** (44.1 / 48 / 88.2 / 96 / 176.4 / 192 / 352.8 / 384 kHz), with no hidden resampling.
-- **Everything takes the native path** — lossless (FLAC, ALAC, WAV, AIFF, APE, WavPack) *and* lossy (MP3, AAC/M4A, Ogg/Vorbis, Opus, WMA) all reach the DAC bit-exact when one is connected.
-- **Native DSD & DoP** — `.dsf` / `.dff` and **SACD disc images (`.iso`)** up to your DAC's limits, as raw native DSD or DoP; software DSD→PCM decimation when no DAC is present. **DSD packed as PCM (DoP)** inside FLAC / WAV / AIFF is detected and decoded as DSD — not played as noise. SACD ISOs appear as individual tracks straight from the disc's own table of contents.
-- **Pure native DTS decoding** — DTS, DTS-ES, DTS 96/24, and full DTS-HD Master Audio decoded bit-perfectly with complete ID3v2 metadata handling and bit-perfect DAC pass-through.
-- **DST compressed DSDIFF decoding** — Direct Stream Transfer (DST) compressed DSDIFF (`.dff`) files now decode natively with full bit-exact lossless fidelity.
-- **APE (Monkey's Audio) & WavPack, done properly** — decoded by the official Monkey's Audio SDK and libwavpack, with APEv2 tag read *and* write (metadata, lyrics, cover art), gapless, seek, visualizer and full analysis. WavPack-DSD plays as high-rate PCM; hybrid `.wv` plays standalone.
-- **Bit-perfect at any volume** — on DACs with a real hardware volume control, the app drives the DAC's own (often analog) volume while the digital stream stays untouched; when it must attenuate in software it uses **TPDF dither** instead of truncation.
-- **Multichannel done right** — 5.1-and-beyond FLAC/WAV/AIFF/ALAC plays bit-perfect through a multichannel-capable USB DAC, with volume and ReplayGain applied evenly to every channel.
-- **A badge that tells the truth.** The **bitXact** indicator reflects the *entire* signal path — it only lights up gold when the audio is genuinely bit-exact, and stays dim the moment DSP, software volume or a sample-rate conversion touches the stream.
-- **Hi-res internal DACs are first-class too.** On phones and DAPs with a direct hi-res wired output (LG Quad DAC, Sony Xperia, hi-res DAPs), hi-res lossless automatically takes the native engine's exclusive source-rate path — no settings hunt — and earns its own dedicated purple **Direct BitXact** or teal **Native · exclusive** seal (never the gold bitXact glow, which stays reserved for the verifiable USB path).
-- **Native DSD & DoP on dedicated Android DAPs** — direct bitstream output and DoP playback on high-res DAPs (including iBasso FPGA IEC61937 and DX180) via direct HAL stream with hardware DSD lock and dedicated purple **Direct BitXact** badge; direct DXD 352.8 kHz decimation fallback.
-
-### 🔌 Deep USB-DAC insight
-- Full **UAC descriptor decode** — product / manufacturer / VID / PID, UAC1 vs UAC2, interface and endpoint layout, every **supported rate, bit depth and format**, native-DSD capability, and whether the DAC exposes a usable **hardware-volume feature unit**.
-- **Live stream health** — real-time clock drift (PPM), active-stream state, and the platform's own bit-perfect-mixer status alongside the app's exclusive path.
-- **Output Devices hub** — a drawer screen for **phone / USB DAC / Bluetooth**: tap to route audio, save a **per-device profile** (exclusive, DSD mode, volume path, allowed rates, **DAC start pad**…), re-apply on reconnect, plus optional keep-screen-on and wake-on-track while playing.
-- **Studio resampler** — on speaker or Bluetooth, hi-res files convert **in the app** to the mixer rate so Android's mixer does not alias them. Exclusive USB is never resampled. Toggle on Output Devices (on by default).
-- **DAC start pad** — optional silence (None…3000 ms) on exclusive USB **cold-start** so dongles that mute or fade the first notes can wake before the music; gapless same-format advances and pause/resume stay snappy.
-
-### 🎚️ Universe DSP
-- **Dynamic DSP node reordering & profile sharing** — drag to reorder processor cards and reshape the real-time DSP pipeline with zero heap allocations, guided by an intelligent Topology Advisor. Full DSP profiles can be exported to JSON, saved, shared, or imported with schema validation.
-- **Up to 32-band parametric EQ** with true RBJ biquads and click-free coefficient ramping.
-- **Convolution** (impulse-response) for headphone & room correction, plus **crossfeed** and **compressor / limiter** dynamics.
-- **HRIR stereophonic soundstage unfolder** — high-fidelity binaural crossfeed processor with tiered room impulse response controls, decoupled feedforward bleed, atomic buffer reset, and recursive crosstalk safety limits.
-- **AutoEQ, built in** — import oratory1990 / Crinacle-style profiles, or search the headphone-correction catalogue in-app and apply with one tap; the catalogue **keeps itself current** with a weekly refresh from the upstream project.
-- **On-device PEQ optimizer** — import frequency-response measurements (Squiglink / Crinacle CSV exports) and generate a parametric EQ curve toward Harman IE, Harman OE, or a custom target — entirely on-device, no cloud needed.
-- **DSP presets** — save your current sound under a name and recall it anytime; every value readout is **tap-to-type** for exact numbers, and a one-tap **Reset** restores flat defaults.
-- **DSP precision selector** — choose between standard (32-bit float) and audiophile-grade (64-bit double) precision for volume and ReplayGain control.
-- **Binaural HRTF & Stereo Virtual Loudspeakers** — fold multichannel (5.1/7.1) to stereo with configurable fold headroom (safe −12 dB to direct 0 dB) or render 2.0 stereo tracks through **±30° virtual loudspeakers** using measured Neumann KU100 HRTFs across 44.1–192+ kHz on **USB DAC, Bluetooth, and phone speaker** (with automatic **bitXact** bypass); load your own AES69 `.sofa` sets and switch them live.
-- **ReplayGain**, and **crossfade** with selectable curves (linear / equal-power / exponential / logarithmic).
-- **A/B compare** two settings instantly, a **colourful response curve** and a live **real-time analyser (RTA)**.
-
-### 🔬 Analysis & insight *(the part no one else has)*
-- **Acoustic Integrity Inspector & Spectrum Contour** — real-time interactive spectrum contour analysis with laboratory-grade amplitude ticks, absolute dBFS AES17 grid, peak-hold frequency milestones, and format provenance cards validating authentic 1-bit DSD depth, harmonic frequency boundaries, and upscale verification.
-- **Signal Path (Audio path)** — a live, stage-by-stage view of what happens between the file and your ears: source → decoder → sample-rate converter → DSP chain → output, each annotated with the real format and state, plus a **Signal Integrity** score and the exact reason a track *isn't* bit-perfect.
-- **Audio X-Ray** — real-time spectral + dynamics read-out of the actual PCM feeding your output: band energy, stereo width, dynamic range, compression, peak / true-peak / RMS, bandwidth and phase correlation — with a plain-language "why does this track sound bad?" diagnosis. Fully local; nothing is uploaded.
-- **Fidelity analysis & scoring** — reference-grade, whole-track, batch-album, and **whole-library** background metering (with pause/resume, playback-safe throttling, low-battery protection, and `.fidelity.json` sidecar export): **DR** dynamic range, **True Peak (dBTP)** with inter-sample overs, **LUFS + LRA** to EBU R128 / ITU-R BS.1770-4, clipping detection, **effective bit depth**, and **fake-FLAC / lossy-upscale detection** with a confidence level (Confirmed / Likely / Possible). Graded Poor → Reference.
-- **Calibrated spectrogram** — per-channel FFT to the true Nyquist, a full-scale tone reads exactly 0 dB, with the fidelity verdict and detected frequency cutoff drawn right on the image, tap-any-point read-out, a dB colour scale, and one-tap **image export** with the methodology. **Pinch-zoom genuinely re-analyses** the region at a growing FFT size (2048 → 8192), and channel views (Stereo / L / R / Mid / **Side**) expose joint-stereo artifacts and fake-stereo upmixes.
-- **BPM & musical-key detection** for any track, including DSD — with a one-tap batch pass that analyses every track still missing them.
-- **Semantic seek bar** — a specialized seekbar that visualizes chorus and sections, allowing you to jump between them or to synced-lyric phrases, with drag-snapping to bar downbeats.
-- **R128 loudness scanning** — measure true EBU R128 loudness from album and artist menus and fill in ReplayGain 2.0 track + album gain for untagged files, so volume levelling works on any library with no desktop tagging.
-
-### ⬆️ Experimental upsampling *(opt-in)*
-Reconstruct lossless PCM to a higher sample rate through a reference-class linear-phase filter before your USB DAC — "Max" auto-picks the highest whole-number multiple your DAC supports, or pick a fixed 2× / 4× / 8×. Clearly labelled *not* bit-perfect, off by default, and it never touches the bit-perfect path.
-
-### 📚 Library & metadata
-- Fast **incremental, parallel on-device scan** that updates only what changed, across **internal storage, SD cards and multiple folders**, all merged into one library — with **all-files access** (reads tags and artwork from the files themselves, not Android’s media index) or per-folder picks, and **exclude-subfolder** rules.
-- **Media Library** (sidebar) — one place for sources, scan, and keep-screen-on while scanning, plus library policies: **split album by path**, **Title Case** names, **ignore WAV metadata**, **guess tags from file name**, and **cover art priority** (folder vs embedded). Multi-disc sets stay **one album** with Disc 1 / Disc 2 sections from disc tags.
-- **Dedicated Audiophile Search** — multi-entity matching with instant format chips (FLAC, DSD, Hi-Res, Lossy), deep criteria filtering, and smooth query persistence.
-- **CUE single-file albums** — one long FLAC/WAV/AIFF/ALAC with a `.cue` beside it appears and plays as its individual tracks, on both the standard and bit-perfect paths.
-- **Album Artists tab & custom field filtering** — dedicated Album Artists library browsing, plus user-defined custom metadata fields integrated across all track lists and quick-filter chips.
-- **Collaborative tracks & artist disambiguation** — collaborative tracks offer a dedicated disambiguation sheet to explore individual artists or shared works, complemented by an Appears On catalog section on artist detail screens.
-- **Album custom fields & customizable track cards** — albums support custom metadata fields with automatic bidirectional track synchronization, and main track cards feature optional toggles for audio quality chip, duration, musical analysis, and folder path.
-- **Smartlists** — rule-based library lists with presets (Recently Added, Most Played, Never Played, Rediscover, Hi-Res, Verified Lossless, and more), a **Rule Builder** for your own lists, **custom fields**, multi-select Smart chips, and play / shuffle / queue from the Smart tab. Fully on-device.
-- **Tag editor** that reads and writes the full hi-res tag set (composer, ISRC, label, catalog #, BPM, key, lyrics and more) — type fields by hand or use online lookup / AcoustID fingerprint match (including genre, track and disc from MusicBrainz) — with **cover-art** embed / folder-sidecar. **Album Edit tags** from the Albums list (⋮ / long-press) or Album detail: **Fetch online** (one release for the whole album) or **Edit manually** (album-level fields + cover applied to every track). **Star ratings (1–5)** embed into the file's own tags so they travel with your library.
-- **Filter chips on every tab** — Favorites, Hi-Res, DSD, FLAC, Genre, Decade, Rating and an Added 7/30/90-day window narrow Songs, Albums, Artists and Playlists instantly; Albums sort by Year / Date added, Artists by Date added.
-- **Playlists** with **.m3u import / export**, automatic discovery of storage playlists, atomic O(1) drag-and-drop reordering, and **save the current queue** to a playlist (remote streams filtered out), and **AI-assisted playlist** generation from a prompt.
-- A built-in **folder browser** so you can add any folder without fighting Android's system picker.
-- **Open with / Share** — Resonāda appears in Android's system chooser and share sheet for audio files, so you can open a track from Files or another app straight into the player.
-
-### 🎤 Lyrics
-- **Synced, word-level karaoke lyrics** with a highlight that follows the beat, loaded from LRC / TTML / KRC / YRC / QRC / **Lyricsfile** (beside a track or embedded). **Type size** XS–XL and **Sans / Serif / Mono**, persisted. LrcLib instrumentals show as **Instrumental** and persist as official Lyricsfile YAML.
-- **Phonetic lyrics romanization** — multi-script romanization for CJK, Cyrillic, and Devanagari lyrics with inline toggle and crowdsourced Unison provider.
-- **Lyrics canvases** — Void, Aura, Kinetic, Prism, Monolith, Gradient, plus **Noir** (silver Ken Burns), **Bloom** (palette orbs), **Cinema** (letterbox + warm grade), and **Fluid** (cover-art wash, left-aligned white text). Cinema and Fluid continue under the status bar and visualizer.
-- **Choose your source** — preview and pick from multiple online lyric providers before applying (including zero-friction Genius and Lyrics.ovh, plus Wikipedia album metadata and artist biographies). Optional **HTTP/SOCKS5 proxy** in Settings for QQ Music / KuGou / NetEase when those hosts are blocked.
-- **Inline translation** — translate synced lyrics to your language right in the view, on-device and **offline** (free), or with your own cloud translation key for higher quality.
-- **AI transcription** for tracks that have no lyrics anywhere.
-
-### 🏠 Home & discovery
-- A **personalized Home** — a time-of-day greeting, "Jump back in", Recently added, Rediscover, your top tracks and favourites.
-- **Flow (✦)** — when the queue runs out, playback keeps going with on-device picks that sound like what you were playing; Flow tracks are badged in the queue, skips teach the session what to avoid, and nothing leaves the phone.
-- **On-device discovery intelligence** — **Daily Mixes** built from the artists you actually play (favourites-weighted familiar + similar-by-sound novel picks, tempo-flow ordered, refreshed daily) and a **"Sounds like"** action that queues your library's closest matches by genre, tempo, harmonic key and era. Entirely local: no network, no accounts, zero effect on playback.
-- An optional **discovery feed** — worldwide trending & new releases with artist write-ups, plus "More from artists you love" built from your own library.
-- **News & articles** (subscribe to any RSS/Atom feed) and **artist / album bios** — all off by default.
-
-### ☁️ Sources & network
-- **Native Music Server Client (Subsonic, OpenSubsonic, Jellyfin, Emby & Plex)** — dedicated native client experience with a Home dashboard, Albums, Artists, Playlists, Genres, Favorites/Starred and ratings sync, Instant Mix radio, hi-res format badges, synced server lyrics, offline track and album downloads to Music, and cross-server switching (including Jellyfin PIN Quick Connect).
-- Stream from **network shares (WebDAV, FTP, SFTP, SMB)**, **Dropbox**, **DLNA / UPnP** servers, **the Internet Archive**, **internet radio** and **podcasts** — radio station files (`.m3u`/`.m3u8`) can be picked from storage or are **auto-discovered** and offered as ready-to-browse sources.
-- **Subsonic / Navidrome** (and compatible servers) — browse playlists, starred, random, artists and search; heart a track in the app and it **stars on the server** so it shows up on your PC.
-- **Popular music-streaming services** connect with your own account for search, streaming and downloads — including your account **Favourites and Playlists** as browsable tabs.
-- **In-app Bluetooth codec control** — apply your chosen codec (LDAC / aptX / AAC / SBC), sample rate, bit depth and LDAC quality to the live headphone link after a one-time companion pairing; no Developer Options needed.
-- **AuxBridge — play any app through your USB DAC.** Capture the audio of any other app (streaming services, browsers, games) with Android's playback-capture consent flow and stream it straight to your DAC through Resonāda's own exclusive driver — pick a capture rate (44.1–192 kHz), keep the volume law, DSP and visualizers, and hand back cleanly the moment you start normal playback. Honest by design: clearly labeled *not* bitXact, since Android decodes and mixes the source first.
-- **Cast to DLNA renderers** (smart TVs, AV receivers, network speakers) with full session control — play/pause, next/previous, seek, track picks and even the volume keys drive the renderer while casting, and local files are served to it straight from the phone.
-- A **cloud cache** with a user-set size cap keeps streamed tracks for reliable, bit-perfect local playback (or stream directly with nothing stored).
-- Turn your phone into a **UPnP / DLNA renderer *and* media server** on your network — a dependency-free, self-contained implementation.
-
-### 🤖 Automation & Integrations
-- **Home Screen Widgets** — interactive audiophile home-screen widgets with live previews: **Daily Discovery**, **DAC & Bit-Perfect Signal Path Monitor**, and **Vintage Analog VU Meter**.
-- **Discord Rich Presence** — native Discord gateway integration to display track, artist, album, audio fidelity badge, and live progress directly on your Discord profile without companion apps.
-- **Android Auto** — full support for Android Auto dashboards, including library browsing, voice search, and seamless playback resumption.
-- **In-app rule engine** — create when→then rules (USB/BT/playback triggers → volume, playback, route, EQ actions) with AND/OR logic and time conditions.
-- **Tasker/MacroDroid Plugin** — a native Action Plugin UI lets third-party apps control Resonāda without typing raw intents. Includes direct import/export to device storage.
-
-### 📈 Stats & scrobbling
-- **Last.fm** and **ListenBrainz** scrobbling with configurable thresholds.
-- Rich **listening statistics & insights**, plus a per-track **Track Insights** sheet with open-data enrichment (MusicBrainz, Last.fm, and more).
-
-### 🎨 A crafted experience
-- **Liquid Floating Navigation Pill & Spring Physics** — floating bottom navigation pill with momentum stretch-and-squash physics, critically damped spring motion, tactile haptics, and edge-clamped boundaries on tab switches. Home category tabs feature matching spring velocity sliding pills with directional page switching.
-- **Edge-to-edge Now Playing modal sheet** — interactive 1:1 swipe-to-dismiss gesture, MiniPlayer horizontal swipe-to-skip, and upward drag gestures.
-- **Liquid Glass UI & Floating Vector Icons** — system-wide translucent acrylic surfaces, signature Resonada acoustic prism refraction, and dynamic ambient glow with selectable Studio Disk and Pure Floating hairline vector icon themes.
-- **Mini lyrics ticker** — real-time mini lyrics ticker directly beneath the hero album art with seamless background blending, syllable-level sweep highlight, and tap-to-expand.
-- **Animated Video Canvas & Immersive Canvas** — selectable stream quality (High 1080p, Standard 720p, Data Saver 480p) with instant dynamic stream resolution switching, aspect-fill center cropping, plus a full-bleed **Immersive Canvas** ambient background with readability scrims.
-- Clean **Material 3** design with a true **AMOLED-black** theme option (pixels fully off on OLED panels).
-- **Speaks five languages** — English, Spanish, Hindi, Russian and Simplified Chinese, switchable in-app or following the system's per-app language setting; every screen, dialog and toast is translated (missing keys fall back to English).
-- **Seven playback modes** from the repeat button — Sequential, loop list, play list once, loop track, play track once (stay or cue next), and **A–B repeat** with tap-to-mark loop points — identical on both engines, persisted across restarts.
-- **Shuffle algorithm** — Standard, Memory Efficient, or **Smart Spreading** (spaces artists and albums for optimal psychoacoustic flow) in Settings → Playback. Enqueueing tracks or selecting "Play Next" while Shuffle is active now preserves their exact order, splicing them directly into the shuffle sequence without scattering.
-- **Playback tempo** — pitch-preserved speed control (0.5–2.0×) from Now Playing tools on the standard player path; locked at 1× when bitXact / native exclusive USB or DSD is active so the pure path stays honest.
-- **5 selectable launcher icons** whose gradient flows into the in-app accents.
-- A premium, animated **cosmic-dance About** screen — tap to sound the Oṃ.
-- **Per-track quick tools & Volume Studio** — Info, Metadata, Lyrics, Sleep timer, Tempo, X-Ray, Spectrogram, and a dedicated **Volume Studio** sheet (adapting to USB DAC hardware UAC, software taper, system stream, or 1-bit DSD, plus Mono, Stereo L/R balance trim, and Multichannel fold headroom), all one tap from Now Playing, plus optional **180° reverse portrait rotation** for DAC/amp stacking.
-- **Seek bar styles** — Waveform (default), **Wavy**, **Squiggly**, **Trace** (file peak/RMS), Hairline, Classic, **Pill**, **Glow**, or **Notch** — Settings → Visuals; spectrum visualizer uses fixed frequency colours while ambient styles stay rainbow.
-- **Cover corner** — Sharp / Soft / Default / Round / Circle on Now Playing and album/artist heroes.
-- **Ambient backdrops** — 10 premium ambient styles for Now Playing (Obsidian Void, Adaptive Chrome, Astral Glow, Resonance Field, Ethereal Mesh, Prismatic Drift, Deep Noir, Luminous Bloom, Fluid Canvas, Cinema Wash) with a **Gradient richness** slider (Minimal / Balanced / Rich / Vivid) and optional dynamic flow.
-- **Center search orb** on the bottom nav opens library search (tracks / albums / artists / playlists) from any tab.
-- **Sleep timer**, **native gapless** (experimental), optional premium screen transitions, and one-tap **update-on-launch** for side-loaded installs.
-
-### 🧩 Built to last
-- A pure **native C++ audio engine** (Oboe) with **streaming decoders** — memory stays bounded no matter the file size.
-- Plays **multi-hour, multi-gigabyte** hi-res and DSD files (including big single-file / CUE albums) end to end, with 64-bit file addressing so seeking stays accurate the whole way through.
-- No analytics, no ads, no account required.
-
----
-
-## 📲 Install
-
-> Requires **Android 8.1 (API 27)** or newer.
-
-1. Open the **[latest release](https://github.com/resonada/resonada/releases/latest)** and download the `.apk` (pick **`arm64-v8a`** for any phone made since 2017).
-2. On your phone, tap the downloaded file.
-3. If prompted, allow **"Install unknown apps"** for your browser / file manager.
-4. Tap **Install**, then open **Resonāda**.
-5. Grant audio / storage access so it can scan your library, and (optionally) allow it to skip battery optimization for uninterrupted background playback.
-
-The APK is **signed**; updates with the same signature install over the top **without data loss**.
-
-### 🎵 Supported formats
-**Lossless & hi-res:** FLAC · ALAC · WAV · AIFF · APE (Monkey's Audio) · WavPack · DSD (DSF / DFF / SACD ISO)
-**Lossy:** MP3 · AAC / M4A · Ogg / Vorbis · Opus · WMA
-**Surround (decoded to stereo PCM):** Dolby Digital / Atmos (EAC3-JOC) · AC-3 · AC-4 · DTS
-
----
-
-## 📸 Screenshots
-
-<div align="center">
-
-|          Now Playing (bitXact)          |            Personalized Home            |             Signal Path             |
-| :-------------------------------------: | :-------------------------------------: | :---------------------------------: |
-|  <img src="ResonadaScreenshots/NowPlaying.jpg" width="220">  |  <img src="ResonadaScreenshots/Home.jpg" width="220">  |  <img src="ResonadaScreenshots/SignalPath.jpg" width="220">  |
-|             **Audio X-Ray**             |          **Fidelity Analysis**          |           **Spectrogram**           |
-|  <img src="ResonadaScreenshots/xray.jpg" width="220">  |  <img src="ResonadaScreenshots/FidelityAnalyzer.jpg" width="220">  |  <img src="ResonadaScreenshots/Spectrogram.jpg" width="220">  |
-|        **Parametric EQ / DSP**          |          **USB DAC details**            |     **Synced lyrics + translate**   |
-|  <img src="ResonadaScreenshots/DSP0.jpg" width="220">  |  <img src="ResonadaScreenshots/USBDACDetails.jpg" width="220">  |  <img src="ResonadaScreenshots/LyricsTranslation.jpg" width="220">  |
-|          **Per-track tools**            |           **Music library**             |            **Navigation**           |
-|  <img src="ResonadaScreenshots/Tools.jpg" width="220">  |  <img src="ResonadaScreenshots/LibraryManage.jpg" width="220">  |  <img src="ResonadaScreenshots/Sidebar.jpg" width="220">  |
-
-<sub>More DSP, settings and analysis screens in the <a href="ResonadaScreenshots/">screenshots</a> folder.</sub>
+**[⬇️ Download Latest APK (v2.1.0.1 · Saṃskāra)](https://github.com/resonada/resonada/releases/latest)**
 
 </div>
 
 ---
 
-## 🗒️ Releases
+## 📽️ Video Demonstration
 
-All builds are published on the **[Releases](https://github.com/resonada/resonada/releases)** page,
-with notes describing what changed. The current line is **`Resonāda — 2.1.0.1 · Saṃskāra · refinement`**.
+Experience Resonāda in real time — streaming bit-perfect audio over USB Audio Class (UAC2), inspecting live signal paths, executing laboratory-grade audio fidelity metering, and tuning 32-band parametric DSP.
 
+<div align="center">
 
----
+<video src="assets/screen-20261026-214900.mp4" width="85%" controls="controls" poster="assets/Screenshot_20261026-212700.png">
+  Your browser does not support the video tag. View the raw recording directly: <a href="assets/screen-20261026-214900.mp4">Demonstration Video (MP4)</a>
+</video>
 
-## ❓ FAQ
+<sub>Full 1080×2412 60 FPS walkthrough featuring live bitXact USB playback, signal flow, and analysis suite.</sub>
 
-**Will it work with my USB DAC?**
-Most UAC-compliant USB DACs are supported for exclusive, bit-perfect output — including native DSD and hardware-volume passthrough where the DAC exposes them. The **USB DAC details** screen shows exactly what your DAC reports — including an honest **Path** (native UAC vs shared vs Android 14 mixer lock) separate from the bitXact outcome badge.
-
-**Do I need a DAC to use it?**
-No. Without a USB DAC it's a full-featured local + streaming player on your phone's own output; the bit-perfect exclusive path simply engages when a supported DAC is connected — and on phones with a direct hi-res wired output, hi-res lossless takes an exclusive source-rate path on the internal DAC automatically.
-
-**Is my music or usage uploaded anywhere?**
-No. Scanning, playback and all analysis (X-Ray, fidelity, spectrogram) run **entirely on-device**. Online features (metadata, lyrics, discovery, scrobbling) are opt-in and only contact the services you enable.
-
-**Is the source code available?**
-This repository distributes the official signed builds. The source is maintained privately.
+</div>
 
 ---
 
-## 💬 Community
+## ✨ Overview
 
-Join the **[Resonāda Telegram group](https://t.me/+urRX_WELImQ0MjU1)** for release
-announcements, early builds, help and feedback — and to share what your DAC is doing.
+**Resonāda** is a high-fidelity local and streaming music player engineered for audiophiles, sound designers, and discerning listeners who demand absolute sonic transparency. Most Android audio players route audio through the standard Android system framework, where audio undergoes uninvited sample-rate conversion, floating-point truncation, mixer dithering, or volume compression inside Android's `AudioFlinger` and OEM hardware abstraction layers (HAL).
+
+Resonāda solves this at the root. It incorporates an independent, user-space **USB Audio Class (UAC1/UAC2) driver** streaming isochronous audio directly to your external DAC via asynchronous USB endpoints (`usbdevfs`), completely bypassing the operating system mixer bit-for-bit.
+
+Complementing its bit-exact transmission is an **on-device acoustic laboratory** that inspects your audio files before and during playback. From detecting upscaled lossy transcodes ("fake FLACs") to real-time Nyquist spectrograms, EBU R128 loudness metrics, true-peak inter-sample overs, and live stage-by-stage signal telemetry, Resonāda proves the integrity of every bit reaching your ears.
+
+> **The bitXact Promise:** The gold `bitXact` seal illuminates only when the complete audio pipeline is verified pristine — zero resampling, zero software attenuation, and zero DSP coloring.
 
 ---
 
-## 📜 License
+## 📸 Visual Showcase
+
+<div align="center">
+
+| Now Playing (`bitXact`) | Personalized Home | Signal Path Inspector |
+| :---: | :---: | :---: |
+| <img src="assets/Screenshot_20261026-212700.png" width="225" alt="Now Playing Screen"> | <img src="assets/Screenshot_20261026-212602.png" width="225" alt="Personalized Home"> | <img src="assets/Screenshot_20261026-212714.png" width="225" alt="Signal Path"> |
+| **Audio X-Ray** | **Acoustic Fidelity Analysis** | **Calibrated Spectrogram** |
+| <img src="assets/Screenshot_20261026-212857.png" width="225" alt="Audio X-Ray"> | <img src="assets/Screenshot_20261026-213038.png" width="225" alt="Fidelity Analysis"> | <img src="assets/Screenshot_20261026-213107.png" width="225" alt="Calibrated Spectrogram"> |
+| **Parametric EQ / DSP** | **USB DAC Hardware Details** | **Synced Lyrics & Liquid Canvas** |
+| <img src=".github/ResonadaScreenshots/DSP0.jpg" width="225" alt="Parametric EQ DSP"> | <img src="assets/Screenshot_20261026-213339.png" width="225" alt="USB DAC Details"> | <img src="assets/Screenshot_20261026-213500.png" width="225" alt="Synced Lyrics"> |
+| **Per-Track Quick Tools** | **Lossless Music Library** | **Navigation Drawer & Hub** |
+| <img src=".github/ResonadaScreenshots/Tools.jpg" width="225" alt="Quick Action Tools"> | <img src="assets/Screenshot_20261026-213632.png" width="225" alt="Music Library"> | <img src="assets/Screenshot_20261026-213941.png" width="225" alt="Navigation Drawer"> |
+
+</div>
+
+---
+
+## 🌟 Comprehensive Architecture & Feature Tour
+
+### 🔊 1. True Bit-Perfect Engine — `bitXact`
+- **Native User-Space USB Audio Driver (UAC1 / UAC2):** Streams asynchronous isochronous PCM and DSD packets directly to USB audio interfaces via Linux `usbdevfs`. Completely circumvents Android `AudioFlinger`, mixer sample-rate conversions, and OEM audio policies.
+- **Hardware Clock Matching:** Dynamically reclocks connected DACs to match the track's native sampling frequency (44.1, 48, 88.2, 96, 176.4, 192, 352.8, 384 kHz, and beyond) without intermediate resampling.
+- **Native 1-Bit DSD & DoP:** Decodes `.dsf`, `.dff`, and full **SACD ISO disc images** natively. Direct bitstream pass-through for DSD64, DSD128, DSD256, and DSD512. Automatically recognizes DSD packed in PCM (DoP) containers inside FLAC/WAV/AIFF headers, avoiding harsh noise bursts.
+- **DST Compressed DSDIFF Support:** Full native multi-threaded decompression of Direct Stream Transfer (DST) compressed audio streams found on SACDs.
+- **Pure DTS & DTS-HD Master Audio:** Bit-perfect decoding of multi-channel DTS, DTS-ES, and DTS 96/24 bitstreams with ID3v2 metadata synchronization.
+- **Official Monkeys Audio (APE) & WavPack Engines:** Embedded official libdemac and libwavpack implementations with APEv2 metadata read/write, gapless playback, seek-table precision, and WavPack-DSD high-rate PCM playback.
+- **Hardware Volume Integration:** Communicates directly with USB Audio Class Feature Units (#7 / #10). Adjusts the DAC's analog/digital hardware registers directly over USB control transfers, preserving digital bit-depth. Falls back to flat TPDF (Triangular Probability Density Function) dithered attenuation when software scaling is required.
+- **Dedicated DAP & Direct HAL Integration:** Supports direct non-USB hardware paths on specialized audiophile DAPs (e.g. iBasso FPGA IEC61937, DX180) and hi-res internal DAC architectures (LG Quad DAC, Sony Xperia). Signals engagement with dedicated purple **Direct BitXact** or teal **Native Exclusive** seals.
+
+---
+
+### 🔬 2. Real-Time Signal Path & Acoustic Diagnostic Suite
+- **Stage-by-Stage Signal Path Inspector:** Live inspection window mapping every transformation in the audio pipeline:
+  `Source (Format/Rate) ➔ Decoder (Precision) ➔ Sample Rate Converter ➔ DSP Chain ➔ Output (Hardware Endpoint)`.
+- **Signal Integrity Scoring:** Generates an algorithmic 0–100 Signal Integrity rating. Verifies whether Android SRC is bypassed, bitXact path is active, output is clipping-free, and measures hardware output latency in milliseconds.
+- **Audio X-Ray:** Live spectral and dynamic power distribution analysis across discrete acoustic frequency registers (Sub-bass, Bass, Mids, Treble, Stereo Width, Dynamic Range, and Compression). Includes heuristic root-cause explanations ("Why does this track sound bad?").
+- **Laboratory-Grade Fidelity Metering & Transcode Detection:**
+  - **Authenticity Verification:** Distinguishes genuine high-resolution recordings from lossy transcodes and upscaled files using spectral roll-off analysis and harmonic noise floors.
+  - **Bit Depth Inspection:** Analyzes raw sample grids to determine true effective bit depth vs padded LSBs.
+  - **Dynamic Range (DR Meter):** Measures crest factor and whole-track dynamic range ratings (DR1 to DR20+).
+  - **EBU R128 & ITU-R BS.1770-4 Compliance:** Calculates Integrated Loudness (LUFS), Loudness Range (LRA), and True Peak (dBTP) with 4× oversampled inter-sample clipping detection.
+- **Calibrated Nyquist Spectrogram:** High-resolution time-frequency visualizer powered by 2048-to-8192 point Short-Time Fourier Transforms (STFT). Features Blackman windowing, interactive tap-to-inspect dBFS readouts, and independent channel isolation (Stereo, Left, Right, Mid, and **Side** channel analysis to expose joint-stereo compression artifacts).
+
+---
+
+### 🎚️ 3. Universe Parametric DSP Suite
+- **Dynamic Node Reordering:** Drag-and-drop signal processor cards to customize the real-time DSP sequence with zero memory reallocation on the audio thread. Full profiles exportable/importable via JSON.
+- **32-Band Parametric Equalizer (PEQ):** Robert Bristow-Johnson (RBJ) biquad filter implementations with real-time click-free coefficient interpolation.
+- **Built-in AutoEQ Integration:** Instant access to thousands of measured headphone correction profiles (oratory1990, Crinacle) with automated weekly upstream index updates.
+- **On-Device Target Curve Optimizer:** Import Squiglink/CSV frequency response measurements and automatically generate compensatory PEQ filters to match Harman Target curves (In-Ear / Over-Ear) directly on device.
+- **Convolution & Room Correction:** Low-latency partitioned convolution engine supporting custom impulse response (WAV) files for room simulation, speaker crossfeed, and headphone correction.
+- **Binaural HRTF & Virtual Loudspeakers:** Neumann KU100 dummy-head HRTF impulse engine renders 2.0 stereo or folds 5.1/7.1 surround sound into realistic ±30° virtual listening rooms across 44.1–192 kHz.
+- **Audiophile Precision Selector:** Toggle between standard 32-bit floating point and studio-grade 64-bit double-precision processing pipelines.
+
+---
+
+### 🌉 4. AuxBridge — Universal USB DAC Audio Intercept
+- **System-Wide Audio Routing:** Stream audio from any third-party app (Tidal, Apple Music, Spotify, YouTube, web browsers, games) directly through Resonāda's custom USB DAC driver.
+- **Custom Capture Rates:** Select sample rate clocks (44.1, 48, 96, 192 kHz) to drive external DACs cleanly without OEM resampling interference.
+- **Transparent Labelling:** Honestly designated as non-bitXact due to upstream Android system mixing, while delivering audiophile-grade DAC pass-through, hardware volume control, and DSP integration for foreign audio streams.
+
+---
+
+### 📚 5. High-Resolution Library & Discovery Intelligence
+- **High-Performance Filesystem Scanner:** Multi-threaded metadata scanner with direct filesystem access (`/storage/emulated/0`), bypassing Android MediaStore limitations. Supports embedded tags, sidecar `.lrc` lyrics, folder artwork hierarchies, and CUE album sheet parsing.
+- **Smartlists & Rule Engine:** Construct expressive, multi-condition rule-based playlists with logical AND/OR matching, metadata constraints, and dynamic track limiters.
+- **Library Health Audit:** Scans whole libraries to identify duplicates, untagged releases, missing album artwork, and low-bitrate re-rip candidates.
+- **Discovery Intelligence ("Sounds Like" & Daily Mixes):** Local, acoustic similarity algorithm recommending tracks based on harmonic key, tempo (BPM), acoustic envelope, and genre continuity without network queries.
+- **Full Tag Editor & AcoustID Lookup:** Edit tags, embed high-resolution cover art, calculate ReplayGain 2.0 / EBU R128 track gains, and query MusicBrainz / AcoustID acoustic fingerprints.
+
+---
+
+### 🎤 6. Synced Lyrics & Liquid Canvas
+- **Word-Level Beat Synchronization:** Millisecond-accurate word-by-word karaoke highlighting following rhythmic transients.
+- **Multi-Provider Aggregation:** Instant fallback search across LrcLib, Genius, Apple Music, Musixmatch, Lyrics.ovh, QuickLRC, NetEase, and QQ Music.
+- **Offline / Cloud Translation & Phonetics:** On-device neural translation into local languages alongside multi-script phonetic romanization (CJK, Cyrillic, Devanagari).
+- **Immersive Canvases:** 10 responsive backdrop themes (Liquid Glass, Obsidian Void, Adaptive Chrome, Astral Glow, Cinema Wash) rendering dynamic refractive lighting effects.
+
+---
+
+### ☁️ 7. Sources, Network & Automation
+- **Native Music Server Client:** Dedicated client interfaces for **Subsonic**, **OpenSubsonic**, **Navidrome**, **Jellyfin** (with PIN Quick Connect), **Emby**, and **Plex**.
+- **Network Storage Protocols:** Direct streaming from SMB, SFTP, FTP, WebDAV shares, Dropbox, and DLNA/UPnP media servers.
+- **Lossless Internet Radio:** Curated stations including Radio Paradise with lossless 16-bit/44.1 kHz FLAC live streams and real-time DJ block metadata.
+- **Automation & Integrations:** Built-in condition-action rule engine (e.g. `When USB DAC connects ➔ Enable bitXact mode`), native Tasker/MacroDroid plugin, Discord Rich Presence, Android Auto dashboards, and interactive desktop widgets.
+
+---
+
+## 📋 Comprehensive Screenshot Directory & Feature Mapping
+
+The table below catalogs every screenshot captured from the live application, mapping the source file to its established semantic convention, corresponding architectural subsystem, and interface details:
+
+| # | File Name | Established Semantic Identifier | Feature / UI Section | Interface Description & Key Telemetry |
+|:---:|:---|:---|:---|:---|
+| **01** | [`Screenshot_20261026-212602.png`](assets/Screenshot_20261026-212602.png) | `Home.png` | **Personalized Home Dashboard** | Time-of-day greeting, recent playback history grid, Daily Mixes (Mix 1–3), active MiniPlayer with format pill, and liquid bottom navigation. |
+| **02** | [`Screenshot_20261026-212619.png`](assets/Screenshot_20261026-212619.png) | `Home-Discover.png` | **Home Discovery Stream** | "Rediscover" recommendations, "Made for you" artist groupings, and recent listening session history. |
+| **03** | [`Screenshot_20261026-212700.png`](assets/Screenshot_20261026-212700.png) | `NowPlaying.png` | **Now Playing (bitXact Immersive)** | Full-bleed album art canvas, gold `bitXact` seal, `FLAC · 16/44.1 kHz · 772 kbps · EXCLUSIVE` badge, semantic seekbar with chorus tick marks, and playback controls. |
+| **04** | [`Screenshot_20261026-212714.png`](assets/Screenshot_20261026-212714.png) | `SignalPath-Flow.png` | **Signal Path (Pipeline Stages)** | Live stage-by-stage pipeline: Source FLAC ➔ Native libFLAC decoder ➔ Sample Rate Converter (Bypassed) ➔ Flat DSP ➔ Exclusive USB endpoint. |
+| **05** | [`Screenshot_20261026-212725.png`](assets/Screenshot_20261026-212725.png) | `SignalPath-Integrity.png` | **Signal Integrity & Diagnostics** | Signal Integrity score (100/100), Android SRC status (Bypassed), clipping monitor (Clean), buffer latency (34.8 ms), and "Fix My Sound" reset action. |
+| **06** | [`Screenshot_20261026-212839.png`](assets/Screenshot_20261026-212839.png) | `NowPlaying-Visualizer.png` | **Now Playing with Spectrum Ribbon** | Real-time dynamic multicoloured audio frequency spectrum visualizer ribbon animating smoothly along the bottom navigation boundary. |
+| **07** | [`Screenshot_20261026-212857.png`](assets/Screenshot_20261026-212857.png) | `AudioXRay.png` | **Audio X-Ray Modal Sheet** | Live spectral and dynamic power distribution sheet with bitXact engine pause telemetry and heuristic "Why does this track sound bad?" inspector. |
+| **08** | [`Screenshot_20261026-213038.png`](assets/Screenshot_20261026-213038.png) | `FidelityAnalyzer-Acoustic.png` | **Fidelity & Acoustic Integrity** | Confirmed 100% Lossless CD Quality verdict, 16-bit true LSB grid, stereo correlation (+0.66), 21.4 kHz cutoff reach, and pristine DC bias (-84.1 dBFS). |
+| **09** | [`Screenshot_20261026-213048.png`](assets/Screenshot_20261026-213048.png) | `FidelityAnalyzer-Contour.png` | **Spectrum Contour & Provenance** | Peak-hold spectrum curve plotted against theoretical dynamic range limits with transcode verification, export, and `.fidelity.json` sidecar saving. |
+| **10** | [`Screenshot_20261026-213055.png`](assets/Screenshot_20261026-213055.png) | `FidelityAnalyzer-Mastering.png` | **Mastering Dynamics & EBU R128** | Dynamic Range (DR5), Peak levels (-0.21 dBFS), True Peak (-0.12 dBTP), RMS power, Integrated Loudness (-9.5 LUFS), and Loudness Range (LRA 14.8 LU). |
+| **11** | [`Screenshot_20261026-213107.png`](assets/Screenshot_20261026-213107.png) | `Spectrogram-Compute.png` | **Calibrated STFT Spectrogram** | 2048-point STFT time-frequency spectrogram up to 22.1 kHz Nyquist ceiling with Blackman window, full-scale calibrated dBFS gradient (-120 to 0 dB), and live bin computation. |
+| **12** | [`Screenshot_20261026-213113.png`](assets/Screenshot_20261026-213113.png) | `Spectrogram-MidSide.png` | **Multi-Channel Spectrogram** | Channel separation view isolating Stereo, Left, Right, Mid, and Side channels with logarithmic frequency axis to detect joint-stereo artifacts and fake-stereo upmixes. |
+| **13** | [`Screenshot_20261026-213131.png`](assets/Screenshot_20261026-213131.png) | `Discovery-SoundsLike.png` | **"Sounds Like" Discovery Engine** | Harmonic key, tempo, and acoustic similarity engine queuing library tracks that closely match the current selection. |
+| **14** | [`Screenshot_20261026-213339.png`](assets/Screenshot_20261026-213339.png) | `USBDACDetails-Hardware.png` | **USB DAC Identity & Descriptors** | Hardware-level enumeration: Product identity, VID/PID, UAC2 classification, isochronous packet size (392 bytes), and decoded hardware endpoint descriptors. |
+| **15** | [`Screenshot_20261026-213417.png`](assets/Screenshot_20261026-213417.png) | `USBDACDetails-Capabilities.png` | **USB DAC Supported Formats** | Full hardware capabilities: 16/24/32-bit PCM, DSD over PCM (DoP), Feature Unit #7 hardware analog volume support, and Android audio HAL negotiated sample rates up to 384 kHz. |
+| **16** | [`Screenshot_20261026-213428.png`](assets/Screenshot_20261026-213428.png) | `USBDACDetails-LiveStream.png` | **USB Stream Health & Clock Drift** | Live stream telemetry: Native USB UAC exclusive state, hardware volume status, UAC 2.0 bInterval, 0 PPM clock drift, and Android 14 bit-perfect mixer lock state. |
+| **17** | [`Screenshot_20261026-213500.png`](assets/Screenshot_20261026-213500.png) | `Lyrics-Synced.png` | **Beat-Synced Lyrics & Liquid Glass** | Real-time word-level synchronized karaoke lyrics with beat tracking, syllable sweep highlight, typography settings (XS–XL, Sans/Serif/Mono), and Liquid Glass backdrop. |
+| **18** | [`Screenshot_20261026-213506.png`](assets/Screenshot_20261026-213506.png) | `Lyrics-SourcePicker.png` | **Multi-Provider Lyrics Selector** | In-app lyric provider engine supporting LrcLib, Apple Music, Musixmatch, Genius, Lyrics.ovh, QuickLRC, NetEase, and QQ Music with word-level and plain-text preview. |
+| **19** | [`Screenshot_20261026-213522.png`](assets/Screenshot_20261026-213522.png) | `Tools-CustomizePill.png` | **Quick Tools Action Pill Customizer** | Drag-and-drop tool configuration allowing up to 5 prioritized tools in the floating pill (Fidelity, Flow, Sounds like, Shuffle, Spectrogram, Repeat, Metadata, Lyrics, Sleep, Tempo). |
+| **20** | [`Screenshot_20261026-213535.png`](assets/Screenshot_20261026-213535.png) | `Tools-Layout.png` | **Quick Tools Sheet Configuration** | Overflow sheet layout manager for Volume Studio, A–B Repeat, and specialized audiophile quick tools. |
+| **21** | [`Screenshot_20261026-213553.png`](assets/Screenshot_20261026-213553.png) | `Sources-Overview.png` | **Unified Sources & Network Hub** | Central connectivity hub for local storage, UPnP/DLNA servers, Cast targets, Subsonic/Navidrome, WebDAV/SMB, and curated RSS audio news feeds. |
+| **22** | [`Screenshot_20261026-213600.png`](assets/Screenshot_20261026-213600.png) | `Sources-RadioParadise.png` | **Lossless Radio Paradise Stream** | Live streaming FLAC 16-bit/44.1 kHz broadcast with interactive real-time DJ block metadata, upcoming playlist queues, and station channel selector. |
+| **23** | [`Screenshot_20261026-213632.png`](assets/Screenshot_20261026-213632.png) | `Library-Tracks.png` | **Music Library — Lossless Tracks** | Complete track browser with audio format chips (FLAC 24/96, ALAC 24/192, DSD, BPM, musical key), sort orders, and filter criteria. |
+| **24** | [`Screenshot_20261026-213650.png`](assets/Screenshot_20261026-213650.png) | `Library-Playlists.png` | **Playlists & M3U Management** | Auto-discovered storage playlists, custom manual lists, M3U import/export, and AI-assisted playlist generation. |
+| **25** | [`Screenshot_20261026-213701.png`](assets/Screenshot_20261026-213701.png) | `Library-Folders.png` | **Hierarchical Folder Browser** | Direct storage tree navigation bypassing Android media store limitations, with breadcrumbs and active folder highlighting. |
+| **26** | [`Screenshot_20261026-213706.png`](assets/Screenshot_20261026-213706.png) | `Library-Artists.png` | **Music Library — Artists Directory** | Alphabetical artist index with fast scrubber, track counts, favorite indicators, and multi-discography support. |
+| **27** | [`Screenshot_20261026-213712.png`](assets/Screenshot_20261026-213712.png) | `Library-AlbumArtists.png` | **Dedicated Album Artists View** | Specialized Album Artist browsing separating individual contributing performers from primary release artists. |
+| **28** | [`Screenshot_20261026-213718.png`](assets/Screenshot_20261026-213718.png) | `Library-ArtistDetail.png` | **Artist Dossier & Batch Mastering** | Comprehensive artist profile with biography, discography, one-tap batch BPM analysis, and whole-catalog EBU R128 loudness scanning. |
+| **29** | [`Screenshot_20261026-213729.png`](assets/Screenshot_20261026-213729.png) | `Library-Timeline.png` | **Chronological Decade & Year Browser** | Release year and decade distribution histogram displaying track counts across chronological eras (2016–2026+). |
+| **30** | [`Screenshot_20261026-213739.png`](assets/Screenshot_20261026-213739.png) | `Smartlists-Overview.png` | **Dynamic Smartlists Hub** | Rule-driven smart playlists with built-in presets (Recently Added, Instant Mix, Hi-Res, Verified Lossless) and instant playback. |
+| **31** | [`Screenshot_20261026-213749.png`](assets/Screenshot_20261026-213749.png) | `Smartlists-RuleBuilder.png` | **Smartlist Rule Builder & Caps** | Advanced filter constructor with boolean matching (Match All / Any), metadata rules, sorting rules, duration caps, and track limits. |
+| **32** | [`Screenshot_20261026-213814.png`](assets/Screenshot_20261026-213814.png) | `OutputDevices-Hub.png` | **Output Devices & Routing Drawer** | Device management drawer for switching between Phone Speaker, Hi-Res 3.5mm wired path, Bluetooth (with codec control), and USB DACs with saved profiles. |
+| **33** | [`Screenshot_20261026-213822.png`](assets/Screenshot_20261026-213822.png) | `OutputDevices-USBTweaks.png` | **USB Tweaks & Exclusive Routing** | BitXact mode switches, AAudio MMAP exclusive output, auto-open on USB DAC connection, pause/resume triggers, call handling, and DSD mode selection. |
+| **34** | [`Screenshot_20261026-213835.png`](assets/Screenshot_20261026-213835.png) | `OutputDevices-Diagnostics.png` | **USB Hardware Health & Diagnostics** | Low-level USB diagnostics: AudioFlinger sink state, physical USB hardware enumeration, interface validation, and troubleshooting guide. |
+| **35** | [`Screenshot_20261026-213844.png`](assets/Screenshot_20261026-213844.png) | `Stats-Overview.png` | **Listening Stats & Scrobbling** | Listening telemetry dashboard: total play counts, playback duration (52h), active streaks, scrobble counters (Last.fm/ListenBrainz), and Listening DNA quality badge. |
+| **36** | [`Screenshot_20261026-213850.png`](assets/Screenshot_20261026-213850.png) | `Stats-ListeningDNA.png` | **Listening DNA & Lossless Purity** | Detailed format distribution chart (FLAC 72%, ALAC, PCM 3%, Lossy 9%), average bitrate (1171 kbps), weekly discovery rates, and top genres. |
+| **37** | [`Screenshot_20261026-213904.png`](assets/Screenshot_20261026-213904.png) | `LibraryHealth-ReRip.png` | **Library Health & Re-Rip Candidates** | Comprehensive audit displaying overall library lossless percentage (84%), duplicate detection, suspected fake hi-res files, and lowest quality re-rip candidates. |
+| **38** | [`Screenshot_20261026-213907.png`](assets/Screenshot_20261026-213907.png) | `LibraryHealth-SkipIntel.png` | **Skip Intelligence & Habit Profiling** | Habit analysis tracking frequently skipped songs, completion percentages, and smart mix curation recommendations. |
+| **39** | [`Screenshot_20261026-213928.png`](assets/Screenshot_20261026-213928.png) | `AuxBridge-Stream.png` | **AuxBridge Universal DAC Intercept** | Real-time audio routing capturing audio from third-party apps (browsers, streaming apps, games) and piping it through Resonāda's exclusive USB DAC driver at user-selected sample rates. |
+| **40** | [`Screenshot_20261026-213936.png`](assets/Screenshot_20261026-213936.png) | `Automation-Rules.png` | **In-App Automation & Tasker Plugin** | Event-action rules engine (e.g. "When USB DAC connects ➔ Enable bitXact"), combined with native Tasker/MacroDroid plugin integration. |
+| **41** | [`Screenshot_20261026-213941.png`](assets/Screenshot_20261026-213941.png) | `Navigation-Drawer.png` | **Unified Navigation Drawer** | System menu providing immediate access to Sources, Output Devices, Equalizer & DSP, Stats, Bluetooth Codec, AuxBridge, Automation, and Media Library. |
+| **42** | [`Screenshot_20261026-213946.png`](assets/Screenshot_20261026-213946.png) | `Settings-LibraryScan.png` | **Media Library Settings & Full Scan** | Direct filesystem access controls, system ringtone/alarm filtering, background scan daemon, and full-library fidelity & mastering analysis toggles. |
+| **43** | [`Screenshot_20261026-213951.png`](assets/Screenshot_20261026-213951.png) | `Settings-FidelitySidecars.png` | **Fidelity Analysis & Power Settings** | Sidecar persistence (`.fidelity.json`), CPU throttling during playback, low-battery auto-pause, pull-to-rescan, and folder path breadcrumbs. |
+| **44** | [`Screenshot_20261026-213955.png`](assets/Screenshot_20261026-213955.png) | `Settings-CoverArtPriority.png` | **Artwork Hierarchy & Tag Policies** | Cover art resolution order (folder images vs embedded metadata), local animated video canvas priority, sidecar `.lrc` priority, and article stripping in sorting. |
+| **—** | [`.github/ResonadaScreenshots/DSP0.jpg`](.github/ResonadaScreenshots/DSP0.jpg) | `DSP0.jpg` | **Parametric EQ Curve & A/B Compare** | Visual biquad filter response curve with draggable filter handles, live RTA analyzer, and instant A/B profile switching. |
+| **—** | [`.github/ResonadaScreenshots/DSP1.jpg`](.github/ResonadaScreenshots/DSP1.jpg) | `DSP1.jpg` | **Equalizer & AutoEQ Catalog** | Graphic vs Parametric toggle, digital preamp gain slider, and in-app AutoEQ headphone measurement search. |
+| **—** | [`.github/ResonadaScreenshots/DSP2.jpg`](.github/ResonadaScreenshots/DSP2.jpg) | `DSP2.jpg` | **Dynamics, Tone & Convolution** | Bass boost, loudness contour, compressor, peak limiter, binaural crossfeed, and impulse response convolution loader. |
+| **—** | [`.github/ResonadaScreenshots/DSP3.jpg`](.github/ResonadaScreenshots/DSP3.jpg) | `DSP3.jpg` | **Live RTA Spectrum & DSP Profiles** | Multi-band Real-Time Analyzer (RTA LIVE), saved per-device DSP profiles, and real-time processing telemetry. |
+
+---
+
+## 🎵 Audio Format Support Matrix
+
+| Format Group | Formats & Codecs Supported | Audio Engine Transmission Path |
+|:---|:---|:---|
+| **Lossless & Studio Master** | FLAC, ALAC (Apple Lossless), WAV, AIFF, APE (Monkey's Audio), WavPack (`.wv`) | Direct bit-perfect pass-through via user-space UAC driver (16/24/32-bit up to 384 kHz+). |
+| **Direct Stream Digital (DSD)** | DSF, DFF, SACD ISO images, WavPack-DSD, DoP (DSD over PCM) | Native 1-bit DSD bitstream over USB, DoP encapsulation, or direct HAL stream on DAPs. |
+| **Lossy Streams & Files** | MP3, AAC / M4A, Ogg Vorbis, Opus, WMA | Bit-exact decoding sent untouched to DAC sampling clocks. |
+| **Surround & Multi-Channel** | DTS, DTS-ES, DTS 96/24, DTS-HD MA, Dolby Digital / Atmos (EAC3-JOC), AC-3, AC-4 | Direct native multi-channel DAC output or binaural HRTF / stereophonic folddown. |
+
+---
+
+## 📲 Installation & Setup
+
+> **System Requirement:** Android 8.1 (Oreo MR1 / API level 27) or newer. Optimized for Android 12, 13, 14, and Android 15.
+
+1. **Download APK:** Download the latest signed `.apk` from the **[Releases Page](https://github.com/resonada/resonada/releases/latest)** (select `arm64-v8a` for modern devices).
+2. **Authorize Installation:** Tap the downloaded file in your browser or file manager and confirm `"Install unknown apps"` permission if prompted.
+3. **Storage Access:** Launch Resonāda and grant storage access (`MANAGE_EXTERNAL_STORAGE` / All-files access) so the native engine can read lossless files directly without Android MediaStore transcoding.
+4. **USB DAC Permission:** Connect your USB DAC or dongle via USB-C. When Android displays the USB permission dialog, check `"Always open Resonāda when this device is connected"` and tap **OK**.
+5. **Disable Battery Optimization (Recommended):** In Android Settings, exclude Resonāda from OEM battery optimization to ensure uninterrupted background audio playback and seamless gapless transitions with the screen off.
+
+---
+
+## ❓ Frequently Asked Questions (FAQ)
+
+#### Will Resonāda work with my USB DAC or dongle?
+Yes. Resonāda includes an implementation of USB Audio Class (UAC1 and UAC2). It communicates directly with standard USB DAC chips (ESS Sabre, AKM, Cirrus Logic, Realtek, TI Burr-Brown, etc.). The **USB DAC Details** screen decodes your DAC's full descriptors, clock sync, and hardware volume registers.
+
+#### Do I need an external USB DAC to use Resonāda?
+No. Resonāda functions as a music player using your phone's built-in speaker, wired 3.5mm jack, or Bluetooth headphones (with built-in Bluetooth codec switching for LDAC, aptX HD, and AAC). On phones equipped with dedicated internal DACs (such as LG Quad DAC or Sony Xperia hi-res paths), Resonāda automatically engages an exclusive source-rate direct path.
+
+#### Are my local music files or listening data ever uploaded?
+Never. Resonāda is designed with an offline-first philosophy. All audio playback, DSP equalization, Audio X-Ray spectral calculations, EBU R128 loudness scanning, and spectrogram generation are executed entirely on-device. Network connectivity is utilized exclusively for optional features you explicitly enable (online lyrics lookup, artwork retrieval, Last.fm scrobbling, Subsonic streaming, or internet radio).
+
+---
+
+## 💬 Community & Support
+
+Join the official community for release updates, beta testing, and audio engineering discussions:
+
+- **Telegram Group:** [t.me/+urRX_WELImQ0MjU1](https://t.me/+urRX_WELImQ0MjU1)
+- **GitHub Issues:** [Issue Tracker](https://github.com/resonada/resonada/issues)
+- **Contact:** [ralkau@proton.me](mailto:ralkau@proton.me)
+
+---
+
+## 📜 License & Copyright
 
 **© 2026 R Kaurav. All rights reserved.**
 
-Resonāda is **proprietary freeware** — free to download and use for
-personal, non-commercial listening, but it is **not** open source.
+Resonāda is **proprietary freeware** — free to download and use for personal, non-commercial listening. It is not open source.
 
-You **may**:
-- Install and use the official signed builds on your own devices, at no cost.
-- Share a link to the [Releases page](https://github.com/resonada/resonada/releases).
+- **Permitted:** You may install and run the official signed builds on your devices without cost and share official release links.
+- **Prohibited:** You may not decompile, reverse-engineer, modify, redistribute, re-host, or monetize the binary or its visual and audio assets without written authorization.
 
-You **may not**:
-- Decompile, reverse-engineer, modify, or create derivative works of the app.
-- Redistribute, rehost, or sell the APK or any part of it.
-- Use the name, icons, or assets without written permission.
-
-The software is provided **"as is", without warranty of any kind**, express or
-implied. The author is not liable for any damages arising from its use.
-
-Third-party open-source components are used under their respective licenses
-(e.g. the bundled Apple ALAC decoder under the Apache License 2.0). The full
-list of components and their notices is available in-app under
-**Settings → About → Open-source licenses**.
-
-For any other use, contact the author at **ralkau@proton.me**.
+The software is provided **"as is"**, without warranty of any kind. Third-party open-source libraries (such as the Apple ALAC decoder, Oboe, libwavpack, and Monkey's Audio SDK) are utilized under their respective licenses, accessible in-app under **Settings ➔ About ➔ Open-source licenses**.
 
 ---
 
@@ -262,8 +255,8 @@ For any other use, contact the author at **ralkau@proton.me**.
 
 **Resonāda** — _the vibrating point of origin._
 
-Made with care by **R Kaurav**.
+Designed with precision by **R Kaurav**.
 
-<sub>Keywords: audiophile android music player · bit-perfect · USB DAC · UAC · hi-res audio · FLAC · ALAC · APE · Monkey's Audio · WavPack · DSD · SACD ISO · lossless · exclusive output · smartlists · output devices · Flow · parametric EQ · convolution · DSP · fidelity analysis · spectrogram · synced lyrics · Subsonic · Navidrome · DLNA · UPnP · WebDAV · Last.fm · ListenBrainz</sub>
+<sub>Audiophile Android Music Player · Bit-Perfect · USB Audio Class (UAC2) · bitXact · Lossless · FLAC · ALAC · DSD · SACD ISO · APE · WavPack · DTS · Parametric EQ · AutoEQ · Convolution IR · EBU R128 · Calibrated Spectrogram · Audio X-Ray · AuxBridge · Subsonic · Navidrome · DLNA</sub>
 
 </div>
