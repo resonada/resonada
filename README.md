@@ -83,12 +83,11 @@ Complementing its bit-exact transmission is an **on-device acoustic laboratory**
 ### 🔊 1. True Bit-Perfect Engine — `bitXact`
 - **Native User-Space USB Audio Driver (UAC1 / UAC2):** Streams asynchronous isochronous PCM and DSD packets directly to USB audio interfaces via Linux `usbdevfs`. Completely circumvents Android `AudioFlinger`, mixer sample-rate conversions, and OEM audio policies.
 - **Hardware Clock Matching:** Dynamically reclocks connected DACs to match the track's native sampling frequency (44.1, 48, 88.2, 96, 176.4, 192, 352.8, 384 kHz, and beyond) without intermediate resampling.
-- **Native 1-Bit DSD & DoP:** Decodes `.dsf`, `.dff`, and full **SACD ISO disc images** natively. Direct bitstream pass-through for DSD64, DSD128, DSD256, and DSD512. Automatically recognizes DSD packed in PCM (DoP) containers inside FLAC/WAV/AIFF headers, avoiding harsh noise bursts.
-- **DST Compressed DSDIFF Support:** Full native multi-threaded decompression of Direct Stream Transfer (DST) compressed audio streams found on SACDs.
-- **Pure DTS & DTS-HD Master Audio:** Bit-perfect decoding of multi-channel DTS, DTS-ES, and DTS 96/24 bitstreams with ID3v2 metadata synchronization.
+- **Native 1-Bit DSD & DoP:** Decodes `.dsf`, `.dff`, and full **DSD ISO disc images** natively. Direct bitstream pass-through for DSD64, DSD128, DSD256, and DSD512. Automatically recognizes DSD packed in PCM (DoP) containers inside FLAC/WAV/AIFF headers, avoiding harsh noise bursts.
+- **Multi-Channel Compressed DSD:** Full native multi-threaded decompression of compressed 1-bit audio streams found in multi-channel DSD disc images.
 - **Official Monkeys Audio (APE) & WavPack Engines:** Embedded official libdemac and libwavpack implementations with APEv2 metadata read/write, gapless playback, seek-table precision, and WavPack-DSD high-rate PCM playback.
 - **Hardware Volume Integration:** Communicates directly with USB Audio Class Feature Units (#7 / #10). Adjusts the DAC's analog/digital hardware registers directly over USB control transfers, preserving digital bit-depth. Falls back to flat TPDF (Triangular Probability Density Function) dithered attenuation when software scaling is required.
-- **Dedicated DAP & Direct HAL Integration:** Supports direct non-USB hardware paths on specialized audiophile DAPs (e.g. iBasso FPGA IEC61937, DX180) and hi-res internal DAC architectures (LG Quad DAC, Sony Xperia). Signals engagement with dedicated purple **Direct BitXact** or teal **Native Exclusive** seals.
+- **Dedicated DAP & Direct HAL Integration:** Supports direct non-USB hardware paths on specialized audiophile DAPs (e.g. custom FPGA direct output) and internal hi-res hardware direct paths. Signals engagement with dedicated purple **Direct BitXact** or teal **Native Exclusive** seals.
 
 ---
 
@@ -112,13 +111,13 @@ Complementing its bit-exact transmission is an **on-device acoustic laboratory**
 - **Built-in AutoEQ Integration:** Instant access to thousands of measured headphone correction profiles (oratory1990, Crinacle) with automated weekly upstream index updates.
 - **On-Device Target Curve Optimizer:** Import Squiglink/CSV frequency response measurements and automatically generate compensatory PEQ filters to match Harman Target curves (In-Ear / Over-Ear) directly on device.
 - **Convolution & Room Correction:** Low-latency partitioned convolution engine supporting custom impulse response (WAV) files for room simulation, speaker crossfeed, and headphone correction.
-- **Binaural HRTF & Virtual Loudspeakers:** Neumann KU100 dummy-head HRTF impulse engine renders 2.0 stereo or folds 5.1/7.1 surround sound into realistic ±30° virtual listening rooms across 44.1–192 kHz.
+- **Binaural HRTF & Virtual Loudspeakers:** Calibrated dummy-head HRTF impulse engine renders 2.0 stereo or folds 5.1/7.1 surround sound into realistic ±30° virtual listening rooms across 44.1–192 kHz.
 - **Audiophile Precision Selector:** Toggle between standard 32-bit floating point and studio-grade 64-bit double-precision processing pipelines.
 
 ---
 
 ### 🌉 4. AuxBridge — Universal USB DAC Audio Intercept
-- **System-Wide Audio Routing:** Stream audio from any third-party app (Tidal, Apple Music, Spotify, YouTube, web browsers, games) directly through Resonāda's custom USB DAC driver.
+- **System-Wide Audio Routing:** Stream audio from any third-party app (streaming services, web browsers, media apps, games) directly through Resonāda's custom USB DAC driver.
 - **Custom Capture Rates:** Select sample rate clocks (44.1, 48, 96, 192 kHz) to drive external DACs cleanly without OEM resampling interference.
 - **Transparent Labelling:** Honestly designated as non-bitXact due to upstream Android system mixing, while delivering audiophile-grade DAC pass-through, hardware volume control, and DSP integration for foreign audio streams.
 
@@ -135,7 +134,7 @@ Complementing its bit-exact transmission is an **on-device acoustic laboratory**
 
 ### 🎤 6. Synced Lyrics & Liquid Canvas
 - **Word-Level Beat Synchronization:** Millisecond-accurate word-by-word karaoke highlighting following rhythmic transients.
-- **Multi-Provider Aggregation:** Instant fallback search across LrcLib, Genius, Apple Music, Musixmatch, Lyrics.ovh, QuickLRC, NetEase, and QQ Music.
+- **Multi-Provider Aggregation:** Instant fallback search across LrcLib, Genius, Musixmatch, Lyrics.ovh, QuickLRC, NetEase, and QQ Music.
 - **Offline / Cloud Translation & Phonetics:** On-device neural translation into local languages alongside multi-script phonetic romanization (CJK, Cyrillic, Devanagari).
 - **Immersive Canvases:** 10 responsive backdrop themes (Liquid Glass, Obsidian Void, Adaptive Chrome, Astral Glow, Cinema Wash) rendering dynamic refractive lighting effects.
 
@@ -172,7 +171,7 @@ The table below catalogs every screenshot captured from the live application, ma
 | **15** | [`Screenshot_20261026-213417.png`](assets/Screenshot_20261026-213417.png) | `USBDACDetails-Capabilities.png` | **USB DAC Supported Formats** | Full hardware capabilities: 16/24/32-bit PCM, DSD over PCM (DoP), Feature Unit #7 hardware analog volume support, and Android audio HAL negotiated sample rates up to 384 kHz. |
 | **16** | [`Screenshot_20261026-213428.png`](assets/Screenshot_20261026-213428.png) | `USBDACDetails-LiveStream.png` | **USB Stream Health & Clock Drift** | Live stream telemetry: Native USB UAC exclusive state, hardware volume status, UAC 2.0 bInterval, 0 PPM clock drift, and Android 14 bit-perfect mixer lock state. |
 | **17** | [`Screenshot_20261026-213500.png`](assets/Screenshot_20261026-213500.png) | `Lyrics-Synced.png` | **Beat-Synced Lyrics & Liquid Glass** | Real-time word-level synchronized karaoke lyrics with beat tracking, syllable sweep highlight, typography settings (XS–XL, Sans/Serif/Mono), and Liquid Glass backdrop. |
-| **18** | [`Screenshot_20261026-213506.png`](assets/Screenshot_20261026-213506.png) | `Lyrics-SourcePicker.png` | **Multi-Provider Lyrics Selector** | In-app lyric provider engine supporting LrcLib, Apple Music, Musixmatch, Genius, Lyrics.ovh, QuickLRC, NetEase, and QQ Music with word-level and plain-text preview. |
+| **18** | [`Screenshot_20261026-213506.png`](assets/Screenshot_20261026-213506.png) | `Lyrics-SourcePicker.png` | **Multi-Provider Lyrics Selector** | In-app lyric provider engine supporting LrcLib, Musixmatch, Genius, Lyrics.ovh, QuickLRC, NetEase, and QQ Music with word-level and plain-text preview. |
 | **19** | [`Screenshot_20261026-213522.png`](assets/Screenshot_20261026-213522.png) | `Tools-CustomizePill.png` | **Quick Tools Action Pill Customizer** | Drag-and-drop tool configuration allowing up to 5 prioritized tools in the floating pill (Fidelity, Flow, Sounds like, Shuffle, Spectrogram, Repeat, Metadata, Lyrics, Sleep, Tempo). |
 | **20** | [`Screenshot_20261026-213535.png`](assets/Screenshot_20261026-213535.png) | `Tools-Layout.png` | **Quick Tools Sheet Configuration** | Overflow sheet layout manager for Volume Studio, A–B Repeat, and specialized audiophile quick tools. |
 | **21** | [`Screenshot_20261026-213553.png`](assets/Screenshot_20261026-213553.png) | `Sources-Overview.png` | **Unified Sources & Network Hub** | Central connectivity hub for local storage, UPnP/DLNA servers, Cast targets, Subsonic/Navidrome, WebDAV/SMB, and curated RSS audio news feeds. |
@@ -210,10 +209,10 @@ The table below catalogs every screenshot captured from the live application, ma
 
 | Format Group | Formats & Codecs Supported | Audio Engine Transmission Path |
 |:---|:---|:---|
-| **Lossless & Studio Master** | FLAC, ALAC (Apple Lossless), WAV, AIFF, APE (Monkey's Audio), WavPack (`.wv`) | Direct bit-perfect pass-through via user-space UAC driver (16/24/32-bit up to 384 kHz+). |
-| **Direct Stream Digital (DSD)** | DSF, DFF, SACD ISO images, WavPack-DSD, DoP (DSD over PCM) | Native 1-bit DSD bitstream over USB, DoP encapsulation, or direct HAL stream on DAPs. |
+| **Lossless & Studio Master** | FLAC, ALAC, WAV, AIFF, APE (Monkey's Audio), WavPack (`.wv`) | Direct bit-perfect pass-through via user-space UAC driver (16/24/32-bit up to 384 kHz+). |
+| **Direct Stream Digital (DSD)** | DSF, DFF, DSD ISO images, WavPack-DSD, DoP (DSD over PCM) | Native 1-bit DSD bitstream over USB, DoP encapsulation, or direct HAL stream on DAPs. |
 | **Lossy Streams & Files** | MP3, AAC / M4A, Ogg Vorbis, Opus, WMA | Bit-exact decoding sent untouched to DAC sampling clocks. |
-| **Surround & Multi-Channel** | DTS, DTS-ES, DTS 96/24, DTS-HD MA, Dolby Digital / Atmos (EAC3-JOC), AC-3, AC-4 | Direct native multi-channel DAC output or binaural HRTF / stereophonic folddown. |
+| **Surround & Multi-Channel** | Multi-channel LPCM, 5.1 / 7.1 Surround Audio Streams | Direct native multi-channel DAC output or binaural HRTF / stereophonic folddown. |
 
 ---
 
@@ -235,7 +234,7 @@ The table below catalogs every screenshot captured from the live application, ma
 Yes. Resonāda includes an implementation of USB Audio Class (UAC1 and UAC2). It communicates directly with standard USB DAC chips (ESS Sabre, AKM, Cirrus Logic, Realtek, TI Burr-Brown, etc.). The **USB DAC Details** screen decodes your DAC's full descriptors, clock sync, and hardware volume registers.
 
 #### Do I need an external USB DAC to use Resonāda?
-No. Resonāda functions as a music player using your phone's built-in speaker, wired 3.5mm jack, or Bluetooth headphones (with built-in Bluetooth codec switching for LDAC, aptX HD, and AAC). On phones equipped with dedicated internal DACs (such as LG Quad DAC or Sony Xperia hi-res paths), Resonāda automatically engages an exclusive source-rate direct path.
+No. Resonāda functions as a music player using your phone's built-in speaker, wired 3.5mm jack, or Bluetooth headphones (with built-in Bluetooth codec switching for LDAC, aptX HD, and AAC). On phones equipped with dedicated internal DACs (such as hardware quad-DACs or manufacturer hi-res direct paths), Resonāda automatically engages an exclusive source-rate direct path.
 
 #### Are my local music files or listening data ever uploaded?
 Never. Resonāda is designed with an offline-first philosophy. All audio playback, DSP equalization, Audio X-Ray spectral calculations, EBU R128 loudness scanning, and spectrogram generation are executed entirely on-device. Network connectivity is utilized exclusively for optional features you explicitly enable (online lyrics lookup, artwork retrieval, Last.fm scrobbling, Subsonic streaming, or internet radio).
@@ -261,7 +260,7 @@ Resonāda is **proprietary freeware** — free to download and use for personal,
 - **Permitted:** You may install and run the official signed builds on your devices without cost and share official release links.
 - **Prohibited:** You may not decompile, reverse-engineer, modify, redistribute, re-host, or monetize the binary or its visual and audio assets without written authorization.
 
-The software is provided **"as is"**, without warranty of any kind. Third-party open-source libraries (such as the Apple ALAC decoder, Oboe, libwavpack, and Monkey's Audio SDK) are utilized under their respective licenses, accessible in-app under **Settings ➔ About ➔ Open-source licenses**.
+The software is provided **"as is"**, without warranty of any kind. Third-party open-source libraries (such as the open-source ALAC decoder, Oboe, libwavpack, and Monkey's Audio SDK) are utilized under their respective licenses, accessible in-app under **Settings ➔ About ➔ Open-source licenses**.
 
 ---
 
@@ -271,6 +270,6 @@ The software is provided **"as is"**, without warranty of any kind. Third-party 
 
 Designed with precision by **R Kaurav**.
 
-<sub>Audiophile Android Music Player · Bit-Perfect · USB Audio Class (UAC2) · bitXact · Lossless · FLAC · ALAC · DSD · SACD ISO · APE · WavPack · DTS · Parametric EQ · AutoEQ · Convolution IR · EBU R128 · Calibrated Spectrogram · Audio X-Ray · AuxBridge · Subsonic · Navidrome · DLNA</sub>
+<sub>Audiophile Android Music Player · Bit-Perfect · USB Audio Class (UAC2) · bitXact · Lossless · FLAC · ALAC · DSD · DSD ISO · APE · WavPack · Parametric EQ · AutoEQ · Convolution IR · EBU R128 · Calibrated Spectrogram · Audio X-Ray · AuxBridge · Subsonic · Navidrome · DLNA</sub>
 
 </div>
