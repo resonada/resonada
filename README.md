@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="ResonadaScreenshots/logo.jpg" width="140" alt="Resonāda logo">
+<img src="assets/logo.jpg" width="140" alt="Resonāda logo">
 
 # Resonāda
 
@@ -24,13 +24,13 @@ Experience Resonāda's real-time analysis tools, native USB engine, and interfac
 
 <div align="center">
 
-<video controls width="100%" poster="ResonadaScreenshots/03_now_playing_bitxact_exclusive.png">
-  <source src="ResonadaScreenshots/resonada_walkthrough_demonstration.mp4" type="video/mp4">
+<video controls width="100%" poster="assets/03_now_playing_bitxact_exclusive.png">
+  <source src="assets/resonada_walkthrough_demonstration.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
 <p align="center">
-  <sub>If the embedded video player does not load in your client: <a href="ResonadaScreenshots/resonada_walkthrough_demonstration.mp4"><b>Download or stream the 1080p MP4 directly</b></a></sub>
+  <sub>If the embedded video player does not load in your client: <a href="assets/resonada_walkthrough_demonstration.mp4"><b>Download or stream the 1080p MP4 directly</b></a></sub>
 </p>
 
 </div>
@@ -149,12 +149,12 @@ The screenshots below illustrate Resonāda's interface hierarchy, analysis instr
 
 | Now Playing (bitXact Exclusive) | Signal Path Inspector | Audio X-Ray Telemetry |
 | :---: | :---: | :---: |
-| <img src="ResonadaScreenshots/03_now_playing_bitxact_exclusive.png" width="230" alt="Now Playing Screen"> | <img src="ResonadaScreenshots/04_signal_path_stage_inspector.png" width="230" alt="Signal Path Inspector"> | <img src="ResonadaScreenshots/07_audio_xray_pcm_analysis.png" width="230" alt="Audio X-Ray"> |
+| <img src="assets/03_now_playing_bitxact_exclusive.png" width="230" alt="Now Playing Screen"> | <img src="assets/04_signal_path_stage_inspector.png" width="230" alt="Signal Path Inspector"> | <img src="assets/07_audio_xray_pcm_analysis.png" width="230" alt="Audio X-Ray"> |
 | *Bit-exact USB streaming with gold status seal* | *Stage-by-stage pipeline verification & buffer metrics* | *Real-time PCM spectral energy and dynamics monitor* |
 
 | Signal Diagnostics & "Fix My Sound" | Liquid Glass Interface | Modular Tool Pill Customizer |
 | :---: | :---: | :---: |
-| <img src="ResonadaScreenshots/05_signal_path_fix_my_sound_diagnostics.png" width="230" alt="Signal Diagnostics"> | <img src="ResonadaScreenshots/06_now_playing_liquid_glass_ui.png" width="230" alt="Liquid Glass UI"> | <img src="ResonadaScreenshots/19_customize_tool_pill_reorder.png" width="230" alt="Customize Tool Pill"> |
+| <img src="assets/05_signal_path_fix_my_sound_diagnostics.png" width="230" alt="Signal Diagnostics"> | <img src="assets/06_now_playing_liquid_glass_ui.png" width="230" alt="Liquid Glass UI"> | <img src="assets/19_customize_tool_pill_reorder.png" width="230" alt="Customize Tool Pill"> |
 | *Instant transparent reset & 100/100 integrity score* | *Edge-to-edge acrylic surface with gesture controls* | *Modular 5-slot quick action bar configuration* |
 
 ---
@@ -163,12 +163,12 @@ The screenshots below illustrate Resonāda's interface hierarchy, analysis instr
 
 | Acoustic Integrity & Spectrum Contour | Fidelity Verification & Upscale Detection | Dynamic Mastering & Loudness Scoring |
 | :---: | :---: | :---: |
-| <img src="ResonadaScreenshots/08_acoustic_integrity_spectrum_contour.png" width="230" alt="Acoustic Integrity"> | <img src="ResonadaScreenshots/09_fidelity_authenticity_verification.png" width="230" alt="Fidelity Verification"> | <img src="ResonadaScreenshots/10_mastering_dynamics_scoring.png" width="230" alt="Mastering Scoring"> |
+| <img src="assets/08_acoustic_integrity_spectrum_contour.png" width="230" alt="Acoustic Integrity"> | <img src="assets/09_fidelity_authenticity_verification.png" width="230" alt="Fidelity Verification"> | <img src="assets/10_mastering_dynamics_scoring.png" width="230" alt="Mastering Scoring"> |
 | *Peak-hold contour vs theoretical bit-depth floors* | *Authentic CD/Hi-Res validation & transcode detection* | *Whole-track DR, True Peak dBTP, and EBU R128 LUFS* |
 
 | Calibrated STFT Spectrogram | Mid/Side Channel Analysis | Harmonic "Sounds Like" Discovery |
 | :---: | :---: | :---: |
-| <img src="ResonadaScreenshots/11_spectrogram_stft_calibrated.png" width="230" alt="Calibrated Spectrogram"> | <img src="ResonadaScreenshots/12_spectrogram_mid_side_analysis.png" width="230" alt="Mid/Side Spectrogram"> | <img src="ResonadaScreenshots/13_harmonic_discovery_sounds_like.png" width="230" alt="Harmonic Discovery"> |
+| <img src="assets/11_spectrogram_stft_calibrated.png" width="230" alt="Calibrated Spectrogram"> | <img src="assets/12_spectrogram_mid_side_analysis.png" width="230" alt="Mid/Side Spectrogram"> | <img src="assets/13_harmonic_discovery_sounds_like.png" width="230" alt="Harmonic Discovery"> |
 | *2048-pt STFT with Blackman window & dBFS grid* | *Side-channel inspection for artificial upmixes* | *Musical key and tempo matching queue generation* |
 
 ---
@@ -177,12 +177,12 @@ The screenshots below illustrate Resonāda's interface hierarchy, analysis instr
 
 | USB DAC Hardware Descriptors | Audio Interfaces & Volume Unit | Live Stream Telemetry & Clock Sync |
 | :---: | :---: | :---: |
-| <img src="ResonadaScreenshots/14_usb_dac_hardware_descriptors.png" width="230" alt="USB Hardware Descriptors"> | <img src="ResonadaScreenshots/15_usb_dac_audio_interfaces.png" width="230" alt="USB Audio Interfaces"> | <img src="ResonadaScreenshots/16_usb_dac_stream_status_clock_sync.png" width="230" alt="Stream Telemetry"> |
+| <img src="assets/14_usb_dac_hardware_descriptors.png" width="230" alt="USB Hardware Descriptors"> | <img src="assets/15_usb_dac_audio_interfaces.png" width="230" alt="USB Audio Interfaces"> | <img src="assets/16_usb_dac_stream_status_clock_sync.png" width="230" alt="Stream Telemetry"> |
 | *UAC1/UAC2 descriptor and endpoint decode* | *Feature Unit #7 hardware volume negotiation* | *Live PPM clock drift and mixer lock diagnostics* |
 
 | Output Devices Routing Hub | USB Tweaks & Exclusive Mode | AuxBridge System Audio Routing |
 | :---: | :---: | :---: |
-| <img src="ResonadaScreenshots/32_output_devices_routing_hub.png" width="230" alt="Output Devices Hub"> | <img src="ResonadaScreenshots/33_usb_output_tweaks_bitxact.png" width="230" alt="USB Tweaks"> | <img src="ResonadaScreenshots/39_auxbridge_system_audio_routing.png" width="230" alt="AuxBridge"> |
+| <img src="assets/32_output_devices_routing_hub.png" width="230" alt="Output Devices Hub"> | <img src="assets/33_usb_output_tweaks_bitxact.png" width="230" alt="USB Tweaks"> | <img src="assets/39_auxbridge_system_audio_routing.png" width="230" alt="AuxBridge"> |
 | *Centralized routing for Internal, USB, and Bluetooth* | *BitXact enforcement and auto-launch configuration* | *Stream third-party apps through the native driver* |
 
 ---
@@ -191,12 +191,12 @@ The screenshots below illustrate Resonāda's interface hierarchy, analysis instr
 
 | Personalized Home & Daily Mixes | Library Songs with Resolution Chips | Direct Filesystem Folder Browser |
 | :---: | :---: | :---: |
-| <img src="ResonadaScreenshots/01_home_daily_mixes.png" width="230" alt="Personalized Home"> | <img src="ResonadaScreenshots/23_library_songs_quality_chips.png" width="230" alt="Songs Library"> | <img src="ResonadaScreenshots/25_library_folders_filesystem_browser.png" width="230" alt="Folder Browser"> |
+| <img src="assets/01_home_daily_mixes.png" width="230" alt="Personalized Home"> | <img src="assets/23_library_songs_quality_chips.png" width="230" alt="Songs Library"> | <img src="assets/25_library_folders_filesystem_browser.png" width="230" alt="Folder Browser"> |
 | *On-device Daily Mixes and smart continuation* | *Lossless quality indicators and multi-key sorting* | *Direct directory hierarchy without MediaStore delays* |
 
 | Smartlist Rule Builder | Library Health & Re-Rip Audit | Skip Intelligence & Curation |
 | :---: | :---: | :---: |
-| <img src="ResonadaScreenshots/31_smartlist_rule_builder.png" width="230" alt="Smartlist Builder"> | <img src="ResonadaScreenshots/37_library_health_quality_audit.png" width="230" alt="Library Health"> | <img src="ResonadaScreenshots/38_skip_intelligence_library_curation.png" width="230" alt="Skip Intelligence"> |
+| <img src="assets/31_smartlist_rule_builder.png" width="230" alt="Smartlist Builder"> | <img src="assets/37_library_health_quality_audit.png" width="230" alt="Library Health"> | <img src="assets/38_skip_intelligence_library_curation.png" width="230" alt="Skip Intelligence"> |
 | *Boolean condition grouping and diversity limits* | *Lossless purity audit and low-bitrate detection* | *Identification of frequently skipped tracks* |
 
 ---
@@ -205,17 +205,17 @@ The screenshots below illustrate Resonāda's interface hierarchy, analysis instr
 
 | Lossless Internet Radio Blocks | Syllable-Level Synced Lyrics | Automation & Intent Rules |
 | :---: | :---: | :---: |
-| <img src="ResonadaScreenshots/22_internet_radio_lossless_blocks.png" width="230" alt="Internet Radio"> | <img src="ResonadaScreenshots/17_synced_lyrics_word_level.png" width="230" alt="Synced Lyrics"> | <img src="ResonadaScreenshots/40_automation_event_rules_engine.png" width="230" alt="Automation Engine"> |
+| <img src="assets/22_internet_radio_lossless_blocks.png" width="230" alt="Internet Radio"> | <img src="assets/17_synced_lyrics_word_level.png" width="230" alt="Synced Lyrics"> | <img src="assets/40_automation_event_rules_engine.png" width="230" alt="Automation Engine"> |
 | *FLAC live radio with interactive DJ tracklist blocks* | *Real-time syllable highlighting and typography controls* | *When->Then event triggers and system automation* |
 
 ---
 
 ## 🗂️ Complete Screenshot Index
 
-The screenshots directory (`ResonadaScreenshots/`) has been organized with semantic, descriptive filenames matching their architectural function:
+The screenshots directory (`assets/`) has been organized with semantic, descriptive filenames matching their architectural function:
 
 ```
-ResonadaScreenshots/
+assets/
 ├── 01_home_daily_mixes.png                      # Home feed with time greetings and on-device Daily Mixes
 ├── 02_home_rediscover_recommendations.png        # Rediscover and algorithmic local recommendations
 ├── 03_now_playing_bitxact_exclusive.png          # Now Playing with gold bitXact seal and timeline
@@ -323,3 +323,4 @@ Made with precision by **R Kaurav** and **VamsiHyperion**.
 <sub>Keywords: bit-perfect audio player · USB Audio Class · UAC2 · native DSD · DoP · SACD ISO · FLAC · ALAC · WavPack · APE · audiobook player · M4B · speech DSP · TTML synced lyrics · spectrogram · STFT · acoustic integrity · mastering score · EBU R128 · True Peak · parametric EQ · convolution FIR · AuxBridge · Smartlists</sub>
 
 </div>
+
