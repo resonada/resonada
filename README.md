@@ -12,7 +12,7 @@
 [![Community](https://img.shields.io/badge/Community-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/+urRX_WELImQ0MjU1)
 [![License](https://img.shields.io/badge/License-Freeware-blue?style=for-the-badge)](#-license)
 
-**[⬇️ Download Official APK (v2.2.0.2 · Yathārtha)](https://github.com/resonada/resonada/releases/latest)**
+**[⬇️ Download Official APK (v2.5.0.0 · Rūpāntara)](https://github.com/resonada/resonada/releases/latest)**
 
 </div>
 
@@ -113,10 +113,16 @@ Complementing this bit-perfect pipeline is a **laboratory-grade analysis suite**
 - **Harmonic Matching ("Sounds Like")**: Local on-device queue synthesis matching harmonic musical keys, tempo BPM, and genre metadata without network dependence.
 - **Smartlist 50+ Field Rule Engine**: Dynamic playlist generation across 50+ tag, file, signal, and listening-habit fields featuring `AND`/`OR`/`NOT` boolean condition grouping, musical key matching, sorting priorities, duration and artist diversity caps, playlist snapshots, and rule import/export.
 
+### 📖 Dedicated Audiobooks & Podcast Mode
+- **Seamless Mode Morphing & Storage Isolation**: Switch effortlessly between Music and Audiobooks mode from the Resonāda header switcher with spring-animated transitions, independent playback sessions, and isolated `/Audiobooks` library scanning.
+- **Bookshelf, Folders & Free Online Catalogs**: Adaptive Bookshelf grid and list layouts with alphabetic scrubber rail, Favorites filter, unified cross-tab search, drag-reorderable tabs and source chips, direct folder browser, Podcast/RSS feed subscriptions with episode drill-down, and built-in LibriVox, Internet Archive, and Project Gutenberg catalogs with one-tap download and streaming.
+- **Native C++ Chapter Demuxer & ARM NEON Speech DSP**: Native chapter demuxing (`.m4b`, ID3 `CHAP`, Ogg, multi-file books) with equal-power gapless chapter splicing, zero-allocation ARM NEON speech conditioning (80 Hz rumble cut, 3-band vocal leveler, de-esser, mono-to-stereo Virtual Stage), pitch-preserved 0.5x–3.5x speed control, and Smart Rewind on resume.
+- **Waveform Scrubbing, Sleep Timer, Widget & Backup**: Memory-mapped `.awf` mipmapped peak waveform scrubber with haptic chapter detents, custom and End-of-Chapter sleep timer with live countdown and shake-to-extend haptics, dedicated Audiobook MediaSession notification and theme-aware Audiobook Home-Screen Widget, and isolated `Resonada-audiobook-backup-<date>.json` export/import.
+
 ### 🎨 Liquid Glass UI, Network & Ergonomics
-- **Acoustic Refraction & Translucent Acrylics**: System-wide glassmorphism with true AMOLED-black options, momentum spring physics, swipe-to-dismiss gesture sheets, and local `.mp4`/`.mov`/`.m4v`/`.webm` animated video covers.
+- **Acoustic Refraction & Cover-Art App Atmosphere**: System-wide glassmorphism with true AMOLED-black options, optional **Cover-Art App Atmosphere** harmonizing app-wide surfaces, navigation docks, sheets, and backgrounds with a 4-swatch album palette across dark and light themes at zero battery cost, momentum spring physics, swipe-to-dismiss gesture sheets, and local `.mp4`/`.mov`/`.m4v`/`.webm` animated video covers.
 - **Customizable Tool Pill & Volume Studio**: Modular quick-access toolbar on the Now Playing screen supporting up to 5 user-selected action tools (Fidelity, Flow, Sounds Like, Spectrogram, Meta, Lyrics, Sleep, Tempo, Volume Studio), plus optional 180° reverse portrait rotation for DAC/amp stacking.
-- **Syllable-Level Synced Lyrics**: High-precision word sweep highlighting loaded from embedded tags or local sidecar formats (`.lrc`, `.lyricsfile`), with support for multi-provider lookup and offline translation.
+- **Syllable-Level & Word-Level TTML Synced Lyrics**: High-precision word sweep highlighting with duet and backing-vocal harmony rendering, loaded from embedded tags, local sidecars (`.lrc`, `.ttml`, `.lyricsfile`), or multi-provider lookup including `lrc.red` instant ISRC matching with clickable source attribution and offline translation.
 - **Native Music Servers & Network Share Media-Server UI**: Dedicated client for Subsonic, OpenSubsonic, Jellyfin, Emby, and Plex, plus a full media-server interface for SMB, WebDAV, FTP, FTPS, and SFTP network shares with remote `.cue` track splitting and a Cloud Cache · bitXact toggle.
 - **Lossless Internet Radio**: Integrated lossless FLAC and AAC streaming radio with interactive channel selectors, multi-song DJ block track scrubbing, and a built-in World Audiophile & Genre station catalog.
 
@@ -130,6 +136,7 @@ Complementing this bit-perfect pipeline is a **laboratory-grade analysis suite**
 | **Direct Stream Digital** | DSD64–DSD1024 (`.dsf`, `.dff`), SACD Disc Images (`.iso`) | Native DSD, DoP (including FLAC/WAV/AIFF/ALAC/APE/WavPack containers), native gapless DSD, DST decompression, PCM decimation fallback |
 | **Advanced Lossless** | WavPack (`.wv`), APE (Monkey's Audio), TAK, TTA, WMA Lossless | Full APEv2 tag read/write, gapless playback, WavPack-DSD high-rate PCM, full forensic & spectrogram analysis |
 | **Lossy Streams** | MP3, AAC / M4A, Ogg Vorbis, Opus, WMA | Native decoder pipeline, ID3v2/Vorbis comment metadata parsing, full acoustic & spectrogram inspection |
+| **Audiobooks & Podcasts** | M4B, MP3, FLAC, Ogg / Opus, Podcast / RSS Feeds | Native C++ chapter demuxing, gapless splicing, `.awf` waveform scrubbing, ARM NEON speech DSP, 0.5x–3.5x WSOLA speed |
 | **Multichannel Surround** | Discrete 5.1 / 7.1 Multichannel Audio | Bit-perfect multichannel USB DAC pass-through or high-fidelity stereo downmix |
 
 ---
@@ -313,6 +320,6 @@ For technical inquiries or distribution permissions, contact: **ralkau@proton.me
 
 Made with precision by **R Kaurav** and **VamsiHyperion**.
 
-<sub>Keywords: bit-perfect audio player · USB Audio Class · UAC2 · native DSD · DoP · SACD ISO · FLAC · ALAC · WavPack · APE · spectrogram · STFT · acoustic integrity · mastering score · EBU R128 · True Peak · parametric EQ · convolution FIR · AuxBridge · Smartlists</sub>
+<sub>Keywords: bit-perfect audio player · USB Audio Class · UAC2 · native DSD · DoP · SACD ISO · FLAC · ALAC · WavPack · APE · audiobook player · M4B · speech DSP · TTML synced lyrics · spectrogram · STFT · acoustic integrity · mastering score · EBU R128 · True Peak · parametric EQ · convolution FIR · AuxBridge · Smartlists</sub>
 
 </div>
